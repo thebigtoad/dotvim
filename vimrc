@@ -85,32 +85,34 @@ nnoremap <C-H> <C-W><C-H>
 
 
 "line numbering
-:set relativenumber
-:set number
+set relativenumber
+set number
+let b:curr_num_state = "rel"
 
+"Toggle between line number states (relative|absolute|none)
 function! NumberToggle()
-  if(&relativenumber == 1)
+  if(b:curr_num_state ==# "rel")
     set number
     set norelativenumber
+    let b:curr_num_state = "abs"
+  elseif(b:curr_num_state ==# "abs")
+    set nonumber
+    set norelativenumber
+    let b:curr_num_state = "none"
   else
     set relativenumber
+    set number
+    let b:curr_num_state = "rel"
   endif
 endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
-
-":au FocusLost * :set number
-":au FocusGained * :set relativenumber
-
-"autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
 
 " Don't move around in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
 
 " Don't move around in normal mode
 nnoremap <up> <nop>

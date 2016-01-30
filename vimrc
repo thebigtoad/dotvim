@@ -83,6 +83,8 @@ nnoremap <C-H> <C-W><C-H>
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+"Y yanks to end of line
+nmap Y y$
 
 "line numbering
 set relativenumber
@@ -138,3 +140,11 @@ let g:syntastic_check_on_wq = 0
 "vim-markdown stuff
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+let g:move_key_modifier = 'M'
+
+"vim-move
+execute "set <M-j>=\ej"
+nnoremap <M-j> j
+execute "set <M-k>=\ek"
+nnoremap <M-k> k
+

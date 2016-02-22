@@ -80,11 +80,20 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "buffer cycling
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 "Y yanks to end of line
 nmap Y y$
+
+" Get rid of highlighting
+noremap <leader>h :noh<CR>
+
+" Hitting jj will jump out of insert mode
+inoremap jj <esc>
+
+" Vertical split
+noremap <leader>v :vsp<CR><C-w><C-w>
 
 "line numbering
 set relativenumber
@@ -147,4 +156,16 @@ execute "set <M-j>=\ej"
 nnoremap <M-j> j
 execute "set <M-k>=\ek"
 nnoremap <M-k> k
+
+"ack.vim
+"Open a new tab and search for something
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+"Immediately search for the word under the cursor in a new tab
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
+"fugitive (git) stuff
+nmap <leader>g :Gstatus<CR>
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gp :Gpush<CR>
 

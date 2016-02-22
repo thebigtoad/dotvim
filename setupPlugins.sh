@@ -52,3 +52,6 @@ addPlugin "vim-scala"          "https://github.com/derekwyatt/vim-scala.git"
 addPlugin "vim-markdown"       "https://github.com/plasticboy/vim-markdown.git"
 addPlugin "tabular"            "https://github.com/godlygeek/tabular.git"
 addPlugin "vim-move"           "https://github.com/matze/vim-move.git"
+# ack.vim requires the perl tool Ack which can be obtained from the packager manager as 'ack-grep'
+addPlugin "ack.vim"            "https://github.com/mileszs/ack.vim.git"
+

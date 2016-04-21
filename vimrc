@@ -86,11 +86,15 @@ nnoremap <S-Tab> :bprevious<CR>
 "Y yanks to end of line
 nmap Y y$
 
+"make < > shifts keep selection
+vnoremap < <gv
+vnoremap > >gv
+
 " Get rid of highlighting
 noremap <leader>h :noh<CR>
 
-" Hitting jj will jump out of insert mode
-inoremap jj <esc>
+" Hitting jk will jump out of insert mode
+inoremap jk <esc>
 
 " Vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
@@ -168,4 +172,5 @@ nmap <leader>g :Gstatus<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
+set diffopt+=vertical
 

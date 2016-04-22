@@ -4,6 +4,11 @@ filetype plugin indent on
 
 :set background=dark
 
+if has('gui_running')
+    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
+endif
+
+
 " set up tab spaceing
 set tabstop=4
 set softtabstop=0

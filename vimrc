@@ -107,26 +107,28 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 "line numbering
 set relativenumber
 set number
-let b:curr_num_state = "rel"
-
-"Toggle between line number states (relative|absolute|none)
-function! NumberToggle()
-  if(b:curr_num_state ==# "rel")
-    set number
-    set norelativenumber
-    let b:curr_num_state = "abs"
-  elseif(b:curr_num_state ==# "abs")
-    set nonumber
-    set norelativenumber
-    let b:curr_num_state = "none"
-  else
-    set relativenumber
-    set number
+if !has('nvim')
     let b:curr_num_state = "rel"
-  endif
-endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+    "Toggle between line number states (relative|absolute|none)
+    function! NumberToggle()
+      if(b:curr_num_state ==# "rel")
+        set number
+        set norelativenumber
+        let b:curr_num_state = "abs"
+      elseif(b:curr_num_state ==# "abs")
+        set nonumber
+        set norelativenumber
+        let b:curr_num_state = "none"
+      else
+        set relativenumber
+        set number
+        let b:curr_num_state = "rel"
+      endif
+    endfunc
+
+    nnoremap <C-n> :call NumberToggle()<cr>
+endif
 
 " Don't move around in insert mode
 inoremap <up> <nop>
@@ -161,10 +163,12 @@ let g:vim_markdown_toc_autofit = 1
 let g:move_key_modifier = 'M'
 
 "vim-move
-execute "set <M-j>=\ej"
-nnoremap <M-j> j
-execute "set <M-k>=\ek"
-nnoremap <M-k> k
+if !has('nvim')
+    execute "set <M-j>=\ej"
+    nnoremap <M-j> j
+    execute "set <M-k>=\ek"
+    nnoremap <M-k> k
+endif
 
 "ack.vim
 "Open a new tab and search for something
@@ -179,3 +183,26 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical
 
+"neovim specific stuff
+if has('nvim')
+    " Tell Vim which characters to show for expanded TABs,
+    " trailing whitespace, and end-of-lines. VERY useful!
+    if &listchars ==# 'eol:$'
+        set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+    endif
+    " Show problematic characters.
+    set list
+
+    " Also highlight all tabs and trailing whitespace characters.
+    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+    match ExtraWhitespace /\s\+$\|\t/
+
+    "ESC to get out of terminal mode
+    :tnoremap <Esc> <C-\><C-n>
+
+    "switch windows without escaping
+    :tnoremap <C-h> <C-\><C-n><C-w>h
+    :tnoremap <C-j> <C-\><C-n><C-w>j
+    :tnoremap <C-k> <C-\><C-n><C-w>k
+    :tnoremap <C-l> <C-\><C-n><C-w>l
+endif

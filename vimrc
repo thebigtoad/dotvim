@@ -2,15 +2,15 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-:set background=dark
+set background=dark
 
 if has('gui_running')
     set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 endif
 
 
-" set up tab spaceing
-set tabstop=4
+" set up tab spacing
+set tabstop=8
 set softtabstop=0
 set expandtab
 set shiftwidth=4
@@ -23,6 +23,8 @@ set smartcase
 set incsearch
 set hlsearch
 
+set title
+
 set ttimeoutlen=50
 let g:airline_theme = 'luna'
 let g:airline#extensions#hunks#enabled=0
@@ -31,7 +33,8 @@ let g:airline#extensions#branch#enabled=1
 
 set laststatus=2
 set t_Co=256
-set noshowmode
+set showmode
+set showcmd
 
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1

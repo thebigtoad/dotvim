@@ -57,3 +57,5 @@ addPlugin "vim-move"           "https://github.com/matze/vim-move.git"
 # ack.vim requires the perl tool Ack which can be obtained from the packager manager as 'ack-grep'
 addPlugin "ack.vim"            "https://github.com/mileszs/ack.vim.git"
 
+
+# TODO add vim-textobj-user (and the text objects vim-textobj-line, vim-textobj-function, vim-textobj-css

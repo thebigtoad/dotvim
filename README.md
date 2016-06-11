@@ -37,6 +37,7 @@ Toggle NerdTree = <Leader>'
 
 ### Nerd Commenter
 Toggle comment state of current line or [count] lines = [count]<Leader>c<space>
+
 Yank then comment current line or [count] lines = [count]<Leader>cy
 
 ### Ctrl-P
@@ -44,26 +45,40 @@ Open Ctrl-P = <ctrl-p>
 
 ### vim-easymove
 Search forward = <Leader><Leader>w
+
 Search back = <Leader><Leader>b
 
 ### vim-fugitive
 Git status = :Gst
+
 Git diff = :Gdiff
+
 Git blame = :Gblame
+
 Git pull = :Gpull
+
 Git push = :Gpush
 
+
 In the git status window
+
 Add/remove file from git index = -
+
 Commit = cc
+
 Diff the file under cursor = D
 
 ### vim-surround
 [Where * = ", ', [, {, (, t ]
+
 Surround word from cursor = ysw*
+
 Surround word from anywhere in the word = ysiw*
+
 Delete surround from inside it = ds
+
 Change surround = ds12 (1=old surround, 2=new, e.g. cs[{ )
+
 Surround visual selection = S*
 
 ### vim-move

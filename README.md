@@ -33,31 +33,31 @@ Basic commands for installed plugins
 ------------------------------------
 
 ### NerdTree 
-Toggle NerdTree = <Leader>'
+Toggle NerdTree = `<Leader>'`
 
 ### Nerd Commenter
-Toggle comment state of current line or [count] lines = [count]<Leader>c<space>
+Toggle comment state of current line or [count] lines = `[count]<Leader>c<space>`
 
-Yank then comment current line or [count] lines = [count]<Leader>cy
+Yank then comment current line or [count] lines = `[count]<Leader>cy`
 
 ### Ctrl-P
-Open Ctrl-P = <ctrl-p>
+Open Ctrl-P = `<ctrl-p>`
 
 ### vim-easymove
-Search forward = <Leader><Leader>w
+Search forward = `<Leader><Leader>w`
 
-Search back = <Leader><Leader>b
+Search back = `<Leader><Leader>b`
 
 ### vim-fugitive
-Git status = :Gst
+Git status = `:Gst`
 
-Git diff = :Gdiff
+Git diff = `:Gdiff`
 
-Git blame = :Gblame
+Git blame = `:Gblame`
 
-Git pull = :Gpull
+Git pull = `:Gpull`
 
-Git push = :Gpush
+Git push = `:Gpush`
 
 
 In the git status window

@@ -27,7 +27,7 @@ Install the following font in linux, then set it as font for the terminal
 Useful Vim commands, some of which may be specific to this vimrc
 ----------------------------------------------------------------
 
-<leader> = \
+Leader key = \
 
 Basic commands for installed plugins
 ------------------------------------
@@ -62,41 +62,46 @@ Git push = `:Gpush`
 
 In the git status window
 
-Add/remove file from git index = -
+Add/remove file from git index = `-`
 
-Commit = cc
+Commit = `cc`
 
-Diff the file under cursor = D
+Diff the file under cursor = `D`
 
 ### vim-surround
 [Where * = ", ', [, {, (, t ]
 
-Surround word from cursor = ysw*
+Surround word from cursor = `ysw*`
 
-Surround word from anywhere in the word = ysiw*
+Surround word from anywhere in the word = `ysiw*`
 
-Delete surround from inside it = ds
+Delete surround from inside it = `ds`
 
-Change surround = ds12 (1=old surround, 2=new, e.g. cs[{ )
+Change surround = `ds12` (1=old surround, 2=new, e.g. cs[{ )
 
-Surround visual selection = S*
+Surround visual selection = `S*`
 
 ### vim-move
-Move line/selection up = <alt-k>
-Move line/selection down = <alt-j>
+Move line/selection up = `<alt-k>`
+
+Move line/selection down = `<alt-j>`
 
 ### vim-abolish (Coercion)
-Make word under cursor camelCase = crc
-Make word under cursor MixedCase = crm
-Make word under cursor snake_case = crs
-Make word under cursor SNAKE_UPPERCAE = crU
-Make word under cursor dot.case = cr.
+Make word under cursor camelCase = `crc`
+
+Make word under cursor MixedCase = `crm`
+
+Make word under cursor snake_case = `crs`
+
+Make word under cursor SNAKE_UPPERCAE = `crU`
+
+Make word under cursor dot.case = `cr.`
 
 ### vim-markdown
-Go to next header = ]]
-Go to previous header = [[
-Go to current header = ]c
-Go to parent header = ]u (i.e. 'up')
+Go to next header = `]]`
+Go to previous header = `[[`
+Go to current header = `]c`
+Go to parent header = `]u` (i.e. 'up')
 
 ### tabular
-Convert space delimited selection to tabular form = :Tabu / 
+Convert space delimited selection to tabular form = `:Tabu / ` 

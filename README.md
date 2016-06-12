@@ -29,6 +29,12 @@ Useful Vim commands, some of which may be specific to this vimrc
 
 Leader key = \
 
+### Folds
+Open fold under cursor = `zo`
+
+Close fold under cursor = `zc`
+
+
 Basic commands for installed plugins
 ------------------------------------
 
@@ -105,3 +111,9 @@ Go to parent header = `]u` (i.e. 'up')
 
 ### tabular
 Convert space delimited selection to tabular form = `:Tabu / ` 
+
+### vim-textobj-function
+Text object for a java function = `af` / `if`
+
+### vim-textobj-css
+Text object for a css class = `ac` / `ic`

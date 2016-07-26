@@ -79,7 +79,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 " change colour of brace matching highlight
-highlight MatchParen cterm=none ctermbg=none ctermfg=DarkCyan
+highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
 
 " K to split a line
 :nnoremap K i<CR><Esc>

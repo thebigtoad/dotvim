@@ -65,6 +65,7 @@ addPlugin "vim-textobj-css"                 "https://github.com/jasonlong/vim-te
 addPlugin "vim-textobj-brace"               "https://github.com/Julian/vim-textobj-brace.git"
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-textobj-quotes.git"
+addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sneak.git"
 
 
 

@@ -212,6 +212,10 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical
 
+"vim-snaek stuff
+"enable smart streak mode
+let g:sneak#streak = 1 
+
 "neovim specific stuff
 if has('nvim')
     " Tell Vim which characters to show for expanded TABs,

@@ -29,14 +29,19 @@ Useful Vim commands, some of which may be specific to this vimrc
 
 Leader key = \
 
+Substitute (formally 's') = `cl`
+
+Substitute line (formally 'S') = `cc`
+
+
 #### Folds
+Turn on syntax based folding = `:setlocal foldmethod=syntax`
+
 Open fold under cursor = `zo`
 
 Close fold under cursor = `zc`
 
-Substitute (formally 's') = `cl`
-
-Substitute line (formally 'S') = `cc`
+Open all folds under cursor = `zO`
 
 
 Basic commands for installed plugins

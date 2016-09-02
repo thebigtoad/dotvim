@@ -36,6 +36,13 @@ set t_Co=256
 set showmode
 set showcmd
 
+" enable folding but open all folds on open
+set foldenable
+set foldmethod=indent
+if has("autocmd")
+    au BufRead * normal zR
+endif
+
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1
 
@@ -184,7 +191,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 "vim-markdown stuff
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_toc_autofit = 1
 let g:move_key_modifier = 'M'
 

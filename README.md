@@ -34,6 +34,8 @@ Open fold under cursor = `zo`
 
 Close fold under cursor = `zc`
 
+Toggle fold under cursor = `za`
+
 
 Basic commands for installed plugins
 ------------------------------------
@@ -104,6 +106,7 @@ Make word under cursor SNAKE_UPPERCAE = `crU`
 Make word under cursor dot.case = `cr.`
 
 #### vim-markdown
+Open Table of contents = `:Toc`
 Go to next header = `]]`
 Go to previous header = `[[`
 Go to current header = `]c`

@@ -29,12 +29,21 @@ Useful Vim commands, some of which may be specific to this vimrc
 
 Leader key = \
 
+Substitute (formally 's') = `cl`
+
+Substitute line (formally 'S') = `cc`
+
+
 #### Folds
+Turn on syntax based folding = `:setlocal foldmethod=syntax`
+
 Open fold under cursor = `zo`
 
 Close fold under cursor = `zc`
 
 Toggle fold under cursor = `za`
+
+Open all folds under cursor = `zO`
 
 
 Basic commands for installed plugins
@@ -43,18 +52,30 @@ Basic commands for installed plugins
 #### NerdTree 
 Toggle NerdTree = `<Leader>'`
 
+
 #### Nerd Commenter
 Toggle comment state of current line or [count] lines = `[count]<Leader>c<space>`
 
 Yank then comment current line or [count] lines = `[count]<Leader>cy`
 
+
+#### vim-sneak
+Search forward for 'xx' = `sxx`
+
+Search backward for 'xx' = `Sxx`
+
+Delete up to 'xx' = `dzxx`
+
+
 #### Ctrl-P
 Open Ctrl-P = `<ctrl-p>`
+
 
 #### vim-easymove
 Search forward = `<Leader><Leader>w`
 
 Search back = `<Leader><Leader>b`
+
 
 #### vim-fugitive
 Git status = `:Gst`
@@ -76,6 +97,7 @@ Commit = `cc`
 
 Diff the file under cursor = `D`
 
+
 #### vim-surround
 [Where * = ", ', [, {, (, t ]
 
@@ -88,6 +110,7 @@ Delete surround from inside it = `ds`
 Change surround = `ds12` (1=old surround, 2=new, e.g. cs[{ )
 
 Surround visual selection = `S*`
+
 
 #### vim-move
 Move line/selection up = `<alt-k>`
@@ -105,6 +128,7 @@ Make word under cursor SNAKE_UPPERCAE = `crU`
 
 Make word under cursor dot.case = `cr.`
 
+
 #### vim-markdown
 Open Table of contents = `:Toc`
 Go to next header = `]]`
@@ -112,11 +136,14 @@ Go to previous header = `[[`
 Go to current header = `]c`
 Go to parent header = `]u` (i.e. 'up')
 
+
 #### tabular
 Convert space delimited selection to tabular form = `:Tabu / ` 
 
+
 #### vim-textobj-function
 Text object for a java function = `af` / `if`
+
 
 #### vim-textobj-css
 Text object for a css class = `ac` / `ic`

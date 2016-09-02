@@ -85,6 +85,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" change colour of brace matching highlight
+highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
+
 " K to split a line
 :nnoremap K i<CR><Esc>
 
@@ -215,6 +218,10 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical
+
+"vim-snaek stuff
+"enable smart streak mode
+let g:sneak#streak = 1 
 
 "neovim specific stuff
 if has('nvim')

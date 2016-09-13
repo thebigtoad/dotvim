@@ -28,6 +28,24 @@ addPlugin(){
     fi
 }
 
+addColour() {
+    if [ $# -ne 1 ]; then
+        echo "Invalid args to addColour"
+        exit 1
+    fi
+    gitUrl=$1
+    colorsDir=$VIM_DIR/colors/
+    latestDir=$colorsDir/latest/
+    mkdir -p $latestDir
+    wget --directory-prefix=$latestDir $gitUrl
+    if [ $? -ne 0 ]; then
+        echo "Something went wrong fetching $gitUrl into $colorsDir"
+        exit 1
+    fi
+    mv $latestDir/*.vim $colorsDir
+    rmdir $latestDir
+}
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Start of script
 
@@ -69,6 +87,8 @@ addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sne
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 
+addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"
+addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim"
+addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Eighties.vim"
+addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Bright.vim"
 
-
-# TODO add vim-textobj-user (and the text objects vim-textobj-line, vim-textobj-function, vim-textobj-css

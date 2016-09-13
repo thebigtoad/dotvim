@@ -3,11 +3,19 @@ syntax on
 filetype plugin indent on
 
 set background=dark
+"molokai colour scheme
+"colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+"Tomorrow-Night colour scheme varients
+"colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Bright
 
 if has('gui_running')
     set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 endif
-
 
 " set up tab spacing
 set tabstop=8
@@ -24,12 +32,12 @@ set incsearch
 set hlsearch
 
 set title
+set nocompatible
+
+"keep 3 lines of context when scrolling
+set scrolloff=3
 
 set ttimeoutlen=50
-let g:airline_theme = 'luna'
-let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#branch#enabled=1
-
 
 set laststatus=2
 set t_Co=256
@@ -60,6 +68,9 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+let g:airline_theme = 'luna'
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
 let g:airline_symbols.space = "\ua0"
 
 " unicode symbols
@@ -87,6 +98,14 @@ let g:airline_symbols.linenr = ''
 
 " change colour of brace matching highlight
 highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
+
+"Swap j <=> gj and k <=> gk
+"Also  prevent the swap if a count has been prefixed, e.g. 10k
+"to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap gj j
+nnoremap gk k
 
 " K to split a line
 :nnoremap K i<CR><Esc>
@@ -179,6 +198,7 @@ vnoremap <silent> <expr> p <sid>Repl()
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "NERDTree
+:let NERDTreeQuitOnOpen = 0
 nnoremap <leader>' :NERDTreeToggle<cr>
 
 "make C-Space do the same as C-n. C-Space is seen by vim as C-@

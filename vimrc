@@ -198,7 +198,7 @@ vnoremap <silent> <expr> p <sid>Repl()
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "NERDTree
-:let NERDTreeQuitOnOpen = 0
+let NERDTreeQuitOnOpen = 1
 nnoremap <leader>' :NERDTreeToggle<cr>
 
 "make C-Space do the same as C-n. C-Space is seen by vim as C-@

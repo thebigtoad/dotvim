@@ -86,6 +86,7 @@ addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-t
 addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sneak.git"
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
+addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim"

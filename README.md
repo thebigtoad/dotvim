@@ -135,6 +135,7 @@ Go to next header = `]]`
 Go to previous header = `[[`
 Go to current header = `]c`
 Go to parent header = `]u` (i.e. 'up')
+Open link in vim for editing = `ge`
 
 
 #### tabular

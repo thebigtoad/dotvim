@@ -51,6 +51,9 @@ if has("autocmd")
     au BufRead * normal zR
 endif
 
+" Set the current working directory to that of the active file
+autocmd BufEnter * silent! lcd %:p:h
+
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1
 

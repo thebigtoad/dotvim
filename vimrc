@@ -1,6 +1,13 @@
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
+
+if has('autocmd')
+    filetype plugin indent on
+endif
+
+if has('syntax') && !exists('g:syntax_on')
+    syntax enable
+endif
+
 
 set background=dark
 "molokai colour scheme
@@ -24,6 +31,7 @@ set expandtab
 set shiftwidth=4
 set smarttab
 set autoindent
+set smartindent
 
 " searching
 set ignorecase
@@ -43,6 +51,10 @@ set laststatus=2
 set t_Co=256
 set showmode
 set showcmd
+
+if v:version > 703 || v:version == 703 && has("patch541")
+    set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
 " enable folding but open all folds on open
 set foldenable

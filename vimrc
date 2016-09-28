@@ -232,7 +232,7 @@ let g:syntastic_check_on_wq = 1
 let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_toc_autofit = 1
 let g:move_key_modifier = 'M'
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml']
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json']
 
 "vim-move
 if !has('nvim')

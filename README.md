@@ -45,6 +45,18 @@ Toggle fold under cursor = `za`
 
 Open all folds under cursor = `zO`
 
+#### Spelling
+Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`
+
+Turn off spell checking for the open buffer = `:setlocal nospell`
+
+Next spelling mistake = `]s`
+
+Previous spelling mistake = `[s`
+
+Add word under cursor to word list = `zg`
+
+Suggest spelling for word under cursor = `z=`
 
 Basic commands for installed plugins
 ------------------------------------

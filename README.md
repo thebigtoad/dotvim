@@ -33,6 +33,8 @@ Substitute (formally 's') = `cl`
 
 Substitute line (formally 'S') = `cc`
 
+Fix line breaks in hard wrapped paragraph = `gqip`
+
 
 #### Folds
 Turn on syntax based folding = `:setlocal foldmethod=syntax`

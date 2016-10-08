@@ -66,6 +66,9 @@ endif
 " Set the current working directory to that of the active file
 autocmd BufEnter * silent! lcd %:p:h
 
+"vim-markdown-preview
+let vim_markdown_preview_github = 1
+
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1
 

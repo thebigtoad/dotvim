@@ -87,6 +87,8 @@ addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sne
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
+#addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git"
+
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim"

@@ -147,10 +147,15 @@ Make word under cursor dot.case = `cr.`
 
 #### vim-markdown
 Open Table of contents = `:Toc`
+
 Go to next header = `]]`
+
 Go to previous header = `[[`
+
 Go to current header = `]c`
+
 Go to parent header = `]u` (i.e. 'up')
+
 Open link in vim for editing = `ge`
 
 

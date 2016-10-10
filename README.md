@@ -27,6 +27,8 @@ Install the following font in linux, then set it as font for the terminal
 Useful Vim commands, some of which may be specific to this vimrc
 ----------------------------------------------------------------
 
+**Note:** The '|' character in an example indicates cursor position.
+
 Leader key = \
 
 Substitute (formally 's') = `cl`
@@ -162,3 +164,8 @@ Text object for a java function = `af` / `if`
 
 #### vim-textobj-css
 Text object for a css class = `ac` / `ic`
+
+#### vim-textobj-variable-segments
+Text object for a variable segment = `av` / `iv`
+
+e.g 'MY_VARI|ABLE_NAME' and `dav` becomes 'MY_NAME'

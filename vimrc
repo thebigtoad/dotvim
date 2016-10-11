@@ -52,6 +52,9 @@ set t_Co=256
 set showmode
 set showcmd
 
+" live life on the edge - don't create swap files
+set noswapfile
+
 if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
 endif

@@ -154,6 +154,10 @@ inoremap jk <esc>
 " Vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
 
+" Horizontal split
+noremap <leader>s :sp<CR><C-w><C-w>
+
+
 "line numbering
 set relativenumber
 set number
@@ -180,13 +184,13 @@ if !has('nvim')
     nnoremap <C-n> :call NumberToggle()<cr>
 endif
 
-" Don't move around in insert mode
+" Prevent use of cursor keys in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Don't move around in normal mode
+" Prevent use of cursor keys in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>

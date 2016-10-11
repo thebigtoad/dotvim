@@ -2,3 +2,4 @@ autoload/pathogen.vim
 bundle/*
 *.swp
 colors/*
+spell

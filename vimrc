@@ -52,6 +52,9 @@ set t_Co=256
 set showmode
 set showcmd
 
+" Don't break lines on words in markdown
+autocmd Filetype markdown setlocal linebreak
+
 " live life on the edge - don't create swap files
 set noswapfile
 

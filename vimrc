@@ -69,6 +69,11 @@ if has("autocmd")
     au BufRead * normal zR
 endif
 
+autocmd Filetype gitcommit setlocal nofoldenable
+autocmd Filetype markdown setlocal foldenable
+autocmd Filetype markdown setlocal foldmethod=syntax
+
+
 " Set the current working directory to that of the active file
 autocmd BufEnter * silent! lcd %:p:h
 

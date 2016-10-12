@@ -160,6 +160,8 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 " Horizontal split
 noremap <leader>s :sp<CR><C-w><C-w>
 
+" toggle spell checking in the local buffer with F7
+map <F7> :setlocal spell! spelllang=en_gb<CR>
 
 "line numbering
 set relativenumber

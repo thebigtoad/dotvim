@@ -33,6 +33,8 @@ set smarttab
 set autoindent
 set smartindent
 
+autocmd FileType python setlocal nosmartindent
+
 " searching
 set ignorecase
 set smartcase

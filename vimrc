@@ -72,6 +72,18 @@ endif
 autocmd Filetype gitcommit setlocal nofoldenable
 autocmd Filetype markdown setlocal foldenable
 
+" Set fold level                                                                                                                                                                  
+nmap z0 :set foldlevel=0<CR>
+nmap z1 :set foldlevel=1<CR>
+nmap z2 :set foldlevel=2<CR>
+nmap z3 :set foldlevel=3<CR>
+nmap z4 :set foldlevel=4<CR>
+nmap z5 :set foldlevel=5<CR>
+nmap z6 :set foldlevel=6<CR>
+nmap z7 :set foldlevel=7<CR>
+nmap z8 :set foldlevel=8<CR>
+nmap z9 :set foldlevel=9<CR>
+
 " Set the current working directory to that of the active file
 autocmd BufEnter * silent! lcd %:p:h
 

@@ -181,7 +181,12 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 noremap <leader>s :sp<CR><C-w><C-w>
 
 " Toggle gigGutter
-noremap <leader>gg :GitGutterToggle
+noremap <leader>gg :GitGutterToggle<CR>
+
+" Toggle gigGutter lines colouring
+noremap <leader>gl ::GitGutterLineHighlightsToggle<CR>
+
+let g:gitgutter_enabled = 0
 
 " toggle spell checking in the local buffer with F7
 map <F7> :setlocal spell! spelllang=en_gb<CR>

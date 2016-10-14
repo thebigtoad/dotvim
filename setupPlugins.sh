@@ -89,6 +89,7 @@ addPlugin "vim-json"                        "https://github.com/elzr/vim-json.gi
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
 addPlugin "vim-bracketed-paste"             "https://github.com/ConradIrwin/vim-bracketed-paste.git"
+addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-gitgutter.git"
 #addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git"
 
 

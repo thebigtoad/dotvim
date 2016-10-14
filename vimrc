@@ -91,6 +91,7 @@ autocmd BufEnter * silent! lcd %:p:h
 
 "vim-markdown-preview
 let vim_markdown_preview_github = 1
+let vim_markdown_preview_hotkey='<C-m>'
 
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1

@@ -24,7 +24,11 @@ if has('gui_running')
     set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 endif
 
+" change colour of brace matching highlight
+highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
+
 " set up tab spacing
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set tabstop=8
 set softtabstop=0
 set expandtab
@@ -36,6 +40,7 @@ set smartindent
 autocmd FileType python setlocal nosmartindent
 
 " searching
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set ignorecase
 set smartcase
 set incsearch
@@ -48,14 +53,17 @@ set nocompatible
 set scrolloff=3
 
 set ttimeoutlen=50
-
 set laststatus=2
 set t_Co=256
 set showmode
 set showcmd
 
+" Markdown specific settings
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 " Don't break lines on words in markdown
 autocmd Filetype markdown setlocal linebreak
+
 
 " live life on the edge - don't create swap files
 set noswapfile
@@ -63,6 +71,9 @@ set noswapfile
 if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
 endif
+
+" Folding stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " enable folding but open all folds on open
 set foldenable
@@ -89,14 +100,18 @@ nmap z9 :set foldlevel=9<CR>
 " Set the current working directory to that of the active file
 autocmd BufEnter * silent! lcd %:p:h
 
+
 "vim-markdown-preview
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey='<C-m>'
 
 " ctrl-p settings
 let g:ctrlp_show_hidden = 1
 
-" air-line
+
+" vim-air-line
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:airline_powerline_fonts = 1
 
 " don't count trailing whitespace since it lags in huge files
@@ -138,8 +153,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-" change colour of brace matching highlight
-highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
+
+" Assorted key bindings
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "Swap j <=> gj and k <=> gk
 "Also  prevent the swap if a count has been prefixed, e.g. 10k
@@ -151,12 +167,6 @@ nnoremap gk k
 
 " K to split a line
 :nnoremap K i<CR><Esc>
-
-" window split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 "buffer cycling
 nnoremap <Tab> :bnext<CR>
@@ -175,12 +185,31 @@ noremap <leader>h :noh<CR>
 " Hitting jk will jump out of insert mode
 inoremap jk <esc>
 
+"make C-Space do the same as C-n. C-Space is seen by vim as C-@
+inoremap <C-@> <C-n>
+
+" toggle spell checking in the local buffer with F7
+map <F7> :setlocal spell! spelllang=en_gb<CR>
+
+
+" Window split stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" window split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
 
 " Horizontal split
 noremap <leader>s :sp<CR><C-w><C-w>
 
+
+" GitGutter stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Toggle gigGutter
 noremap <leader>gg :GitGutterToggle<CR>
 
@@ -189,10 +218,9 @@ noremap <leader>gl ::GitGutterLineHighlightsToggle<CR>
 
 let g:gitgutter_enabled = 0
 
-" toggle spell checking in the local buffer with F7
-map <F7> :setlocal spell! spelllang=en_gb<CR>
 
 "line numbering
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set relativenumber
 set number
 if !has('nvim')
@@ -218,6 +246,9 @@ if !has('nvim')
     nnoremap <C-n> :call NumberToggle()<cr>
 endif
 
+
+"Cursor keys == BAD!
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Prevent use of cursor keys in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -229,6 +260,7 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+
 
 "Script to stop vim overwriting the default register
 "when pasting over a visual selection
@@ -251,16 +283,15 @@ endfunction
 " NB: this supports "rp that replaces the selection by the contents of @r
 vnoremap <silent> <expr> p <sid>Repl()
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "NERDTree
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let NERDTreeQuitOnOpen = 1
 nnoremap <leader>' :NERDTreeToggle<cr>
 
-"make C-Space do the same as C-n. C-Space is seen by vim as C-@
-inoremap <C-@> <C-n>
 
 "syntastic settings
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -269,13 +300,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
+
 "vim-markdown stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_toc_autofit = 1
 let g:move_key_modifier = 'M'
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json']
 
+
 "vim-move
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if !has('nvim')
     execute "set <M-j>=\ej"
     nnoremap <M-j> j
@@ -283,24 +318,33 @@ if !has('nvim')
     nnoremap <M-k> k
 endif
 
+
 "ack.vim
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "Open a new tab and search for something
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 "Immediately search for the word under the cursor in a new tab
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
+
 "fugitive (git) stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 nmap <leader>g :Gstatus<CR>
+nmap <leader>gs :Gstatus<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical
 
+
 "vim-snaek stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "enable smart streak mode
 let g:sneak#streak = 1 
 
+
 "neovim specific stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if has('nvim')
     " Tell Vim which characters to show for expanded TABs,
     " trailing whitespace, and end-of-lines. VERY useful!

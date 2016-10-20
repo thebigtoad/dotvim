@@ -224,7 +224,9 @@ let g:gitgutter_enabled = 0
 set relativenumber
 set number
 if !has('nvim')
-    let b:curr_num_state = "rel"
+    if !exists("b:curr_num_state")
+        let b:curr_num_state = "none"
+    endif
 
     "Toggle between line number states (relative|absolute|none)
     function! NumberToggle()

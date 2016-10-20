@@ -225,7 +225,7 @@ set relativenumber
 set number
 if !has('nvim')
     if !exists("b:curr_num_state")
-        let b:curr_num_state = "none"
+        let b:curr_num_state = "rel"
     endif
 
     "Toggle between line number states (relative|absolute|none)

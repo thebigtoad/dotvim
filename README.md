@@ -26,15 +26,12 @@ Install the following font in linux, then set it as font for the terminal
 
 **Note:** The '|' character in an example indicates cursor position.
 
-Leader key = \
-
-Substitute (formally 's') = `cl`
-
-Substitute line (formally 'S') = `cc`
-
-Fix line breaks in hard wrapped paragraph = `gqip`
-
-Jump to last character = `g_`
+* Leader key = \
+* Substitute (formally 's') = `cl`
+* Substitute line (formally 'S') = `cc`
+* Fix line breaks in hard wrapped paragraph = `gqip`
+* Jump to last character = `g_`
+* Increment/decrement a number = `<ctrl>a` / `<ctrl>x`
 
 
 ### Folds

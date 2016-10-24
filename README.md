@@ -35,140 +35,93 @@ Install the following font in linux, then set it as font for the terminal
 
 
 ### Folds
-Turn on syntax based folding = `:setlocal foldmethod=syntax`
-
-Open fold under cursor = `zo`
-
-Close fold under cursor = `zc`
-
-Toggle fold under cursor = `za`
-
-Open all folds under cursor = `zO`
-
-Set fold level 0-9 = `z0` - `z9`
+* Turn on syntax based folding = `:setlocal foldmethod=syntax`
+* Open fold under cursor = `zo`
+* Close fold under cursor = `zc`
+* Toggle fold under cursor = `za`
+* Open all folds under cursor = `zO`
+* Set fold level 0-9 = `z0` - `z9`
 
 ### Spelling
-Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`
-
-Turn off spell checking for the open buffer = `:setlocal nospell`
-
-Next spelling mistake = `]s`
-
-Previous spelling mistake = `[s`
-
-Add word under cursor to word list = `zg`
-
-Suggest spelling for word under cursor = `z=`
-
+* Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`
+* Turn off spell checking for the open buffer = `:setlocal nospell`
+* Next spelling mistake = `]s`
+* Previous spelling mistake = `[s`
+* Add word under cursor to word list = `zg`
+* Suggest spelling for word under cursor = `z=`
 
 ## Basic commands for installed plugins
 
 ### NerdTree 
-Toggle NerdTree = `<Leader>'`
-
+* Toggle NerdTree = `<Leader>'`
 
 ### Nerd Commenter
-Toggle comment state of current line or [count] lines = `[count]<Leader>c<space>`
-
-Yank then comment current line or [count] lines = `[count]<Leader>cy`
-
+* Toggle comment state of current line or [count] lines = `[count]<Leader>c<space>`
+* Yank then comment current line or [count] lines = `[count]<Leader>cy`
 
 ### vim-sneak
-Search forward for 'xx' = `sxx`
-
-Search backward for 'xx' = `Sxx`
-
-Delete up to 'xx' = `dzxx`
-
+* Search forward for 'xx' = `sxx`
+* Search backward for 'xx' = `Sxx`
+* Delete up to 'xx' = `dzxx`
 
 ### Ctrl-P
-Open Ctrl-P = `<ctrl-p>`
-
+* Open Ctrl-P = `<ctrl-p>`
 
 ### vim-easymove
-Search forward = `<Leader><Leader>w`
-
-Search back = `<Leader><Leader>b`
-
+* Search forward = `<Leader><Leader>w`
+* Search back = `<Leader><Leader>b`
 
 ### vim-fugitive
-Git status = `:Gst` or `<leader>gs`
-
-Git diff = `:Gdiff` or `<leader>gd`
-
-Git blame = `:Gblame` or `<leader>gb`
-
-Git pull = `:Gpull`
-
-Git push = `:Gpush` or `<leader>gp`
-
+* Git status = `:Gst` or `<leader>gs`
+* Git diff = `:Gdiff` or `<leader>gd`
+* Git blame = `:Gblame` or `<leader>gb`
+* Git pull = `:Gpull`
+* Git push = `:Gpush` or `<leader>gp`
 
 In the git status window
 
-Add/remove file from git index = `-`
-
-Commit = `cc`
-
-Diff the file under cursor = `D`
-
+* Add/remove file from git index = `-`
+* Commit = `cc`
+* Diff the file under cursor = `D`
 
 ### vim-surround
 [Where * = ", ', [, {, (, t ]
 
-Surround word from cursor = `ysw*`
-
-Surround word from anywhere in the word = `ysiw*`
-
-Delete surround from inside it = `ds`
-
-Change surround = `cs12` (1=old surround, 2=new, e.g. cs[{ )
-
-Surround visual selection = `S*`
-
+* Surround word from cursor = `ysw*`
+* Surround word from anywhere in the word = `ysiw*`
+* Delete surround from inside it = `ds`
+* Change surround = `cs12` (1=old surround, 2=new, e.g. cs[{ )
+* Surround visual selection = `S*`
 
 ### vim-move
-Move line/selection up = `<alt-k>`
-
-Move line/selection down = `<alt-j>`
+* Move line/selection up = `<alt-k>`
+* Move line/selection down = `<alt-j>`
 
 ### vim-abolish (Coercion)
-Make word under cursor camelCase = `crc`
-
-Make word under cursor MixedCase = `crm`
-
-Make word under cursor snake_case = `crs`
-
-Make word under cursor SNAKE_UPPERCAE = `crU`
-
-Make word under cursor dot.case = `cr.`
-
+* Make word under cursor camelCase = `crc`
+* Make word under cursor MixedCase = `crm`
+* Make word under cursor snake_case = `crs`
+* Make word under cursor SNAKE_UPPERCAE = `crU`
+* Make word under cursor dot.case = `cr.`
 
 ### vim-markdown
-Open Table of contents = `:Toc`
-
-Go to next header = `]]`
-
-Go to previous header = `[[`
-
-Go to current header = `]c`
-
-Go to parent header = `]u` (i.e. 'up')
-
-Open link in vim for editing = `ge`
-
+* Open Table of contents = `:Toc`
+* Go to next header = `]]`
+* Go to previous header = `[[`
+* Go to current header = `]c`
+* Go to parent header = `]u` (i.e. 'up')
+* Open link in vim for editing = `ge`
 
 ### tabular
-Convert space delimited selection to tabular form = `:Tabu / ` 
-
+* Convert space delimited selection to tabular form = `:Tabu / ` 
 
 ### vim-textobj-function
-Text object for a java function = `af` / `if`
-
+* Text object for a java function = `af` / `if`
 
 ### vim-textobj-css
-Text object for a css class = `ac` / `ic`
+* Text object for a css class = `ac` / `ic`
 
 ### vim-textobj-variable-segments
-Text object for a variable segment = `av` / `iv`
+* Text object for a variable segment = `av` / `iv`
 
 e.g 'MY_VARI|ABLE_NAME' and `dav` becomes 'MY_NAME'

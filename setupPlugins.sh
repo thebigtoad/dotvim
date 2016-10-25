@@ -93,6 +93,11 @@ addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-git
 # vim-markdown-preview requires python, grip, xdotool and a browser to function
 addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git"
 addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
+#YouCompleteMe is heavyweight and needs node/npm and the following
+#sudo apt-get install -y build-essential cmake python-dev python3-dev
+#cd ~/.vim/bundle/youcompleteme
+#git submodule update --init --recursive
+#./install.py --tern-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 
 

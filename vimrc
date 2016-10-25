@@ -345,6 +345,12 @@ set diffopt+=vertical
 let g:sneak#streak = 1 
 
 
+" conoline.vim stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"use colour scheme's colours for normal mode
+let g:conoline_use_colorscheme_default_normal=1
+
+
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if has('nvim')

@@ -92,6 +92,7 @@ addPlugin "vim-bracketed-paste"             "https://github.com/ConradIrwin/vim-
 addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-gitgutter.git"
 # vim-markdown-preview requires python, grip, xdotool and a browser to function
 addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git"
+addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
 
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"

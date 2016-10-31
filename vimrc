@@ -157,6 +157,13 @@ let g:airline_symbols.linenr = ''
 " Assorted key bindings
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+"Use space as the leader                                                                                                                                                          
+map <space> <leader>
+
+"Specific mapping for easymotion
+map <space><space> <leader><leader>
+
+
 "Swap j <=> gj and k <=> gk
 "Also  prevent the swap if a count has been prefixed, e.g. 10k
 "to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines

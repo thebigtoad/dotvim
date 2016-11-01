@@ -358,6 +358,47 @@ let g:sneak#streak = 1
 let g:conoline_use_colorscheme_default_normal=1
 
 
+" vim-expand-region stuff                                                                                                                                                         
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                      
+let g:expand_region_text_objects_xsd = {                                                                                                                                          
+      \ 'iw' :0,
+      \ 'iW' :0,
+      \ 'iq' :0,
+      \ 'aq' :0,
+      \ 'i>' :0,
+      \ 'a>' :0,
+      \ 'it' :1,
+      \ 'at' :1,
+      \ }
+                                                                                                                                                                                  
+let g:expand_region_text_objects_xml = {
+      \ 'iw' :0,
+      \ 'iW' :0,
+      \ 'iq' :0,
+      \ 'aq' :0,
+      \ 'i>' :0,
+      \ 'a>' :0,
+      \ 'it' :1,
+      \ 'at' :1,
+      \ }
+      
+let g:expand_region_text_objects_markdown = {
+      \ 'iw' :0,
+      \ 'iW' :0,
+      \ 'ib' :0,
+      \ 'ab' :0,
+      \ 'iq' :0,
+      \ 'aq' :0,
+      \ 'i_' :0,
+      \ 'a_' :0,
+      \ 'i`' :0,
+      \ 'a`' :0,
+      \ 'is' :0,
+      \ 'as' :0,
+      \ 'ip' :0,
+      \ 'ap' :0,
+      \ }
+
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if has('nvim')

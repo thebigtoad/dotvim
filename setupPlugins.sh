@@ -99,6 +99,7 @@ addPlugin "conoline.vim"                    "https://github.com/miyakogi/conolin
 #git submodule update --init --recursive
 #./install.py --tern-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
+addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"

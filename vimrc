@@ -106,8 +106,10 @@ autocmd BufEnter * silent! lcd %:p:h
 let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey='<C-m>'
 
-" ctrl-p settings
+" ctrl-p
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_map = '<leader>p'
 
 
 " vim-air-line
@@ -357,6 +359,10 @@ let g:sneak#streak = 1
 "use colour scheme's colours for normal mode
 let g:conoline_use_colorscheme_default_normal=1
 
+" YouCompleteMe stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" clear the black list so we also get completion, e.g. in markdown
+let g:ycm_filetype_blacklist = {}
 
 " vim-expand-region stuff                                                                                                                                                         
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                      

@@ -225,7 +225,7 @@ noremap <leader>gg :GitGutterToggle<CR>
 " Toggle gigGutter lines colouring
 noremap <leader>gl ::GitGutterLineHighlightsToggle<CR>
 
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled = 1
 
 
 "line numbering
@@ -348,7 +348,7 @@ nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical
 
 
-"vim-snaek stuff
+"vim-sneak stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "enable smart streak mode
 let g:sneak#streak = 1 

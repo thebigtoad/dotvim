@@ -198,7 +198,10 @@ inoremap jk <esc>
 inoremap <C-@> <C-n>
 
 " toggle spell checking in the local buffer with F7
-map <F7> :setlocal spell! spelllang=en_gb<CR>
+" There is an issue with Conoline hiding the spelling errors on the current
+" line so turning on spelling current disables conoline. Temporary hack
+" till I can work out how to fix it.
+map <F7> :ConoLineToggle<CR>:setlocal spell! spelllang=en_gb<CR>
 
 
 " Window split stuff

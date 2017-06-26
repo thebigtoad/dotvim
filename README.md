@@ -114,6 +114,7 @@ In the git status window
 
 ### tabular
 * Convert space delimited selection to tabular form = `:Tabu / ` 
+* Format a markdown table = `:Tabu /|` 
 
 ### vim-textobj-function
 * Text object for a java function = `af` / `if`

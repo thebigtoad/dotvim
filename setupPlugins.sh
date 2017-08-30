@@ -100,6 +100,8 @@ addPlugin "conoline.vim"                    "https://github.com/miyakogi/conolin
 #./install.py --tern-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
+#groovy indenting
+addPlugin "groovyindent-unix"               "https://github.com/vim-scripts/groovyindent-unix.git"
 
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"

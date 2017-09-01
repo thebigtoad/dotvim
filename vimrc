@@ -121,7 +121,10 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " put a buffer list at the top
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamecollapse = 1
+"let g:airline#extensions#tabline#fnametruncate = 20
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}

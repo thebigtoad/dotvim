@@ -106,10 +106,7 @@ autocmd BufEnter * silent! lcd %:p:h
 let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey='<C-m>'
 
-" ctrl-p
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_map = '<leader>p'
+
 
 
 " vim-air-line
@@ -336,12 +333,35 @@ if !has('nvim')
 endif
 
 
+" ctrl-p
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_map = '<leader>p'
+
+
 "ack.vim
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "Open a new tab and search for something
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 "Immediately search for the word under the cursor in a new tab
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
+
+" ag - The Silver Searcher
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if executable('ag')
+  " Use ag instead of ack
+  let g:ackprg = 'ag --vimgrep'
+
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 
 "fugitive (git) stuff

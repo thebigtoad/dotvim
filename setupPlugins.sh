@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -7,9 +7,16 @@ VIM_BUNDLE_DIR=$VIM_DIR/bundle
 VIM_AUTOLOAD_DIR=$VIM_DIR/autoload
 VIM_PATHOGEN_DIR=$VIM_BUNDLE_DIR/vim-pathogen
 
+#Shell Colour constants for use in 'echo -e'
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+
 addPlugin(){
     if [ $# -ne 2 ]; then
-        echo "Invalid args to addPlugin"
+        echo -e "${RED}Invalid args to addPlugin${NC}"
         exit 1
     fi
 
@@ -19,18 +26,19 @@ addPlugin(){
 
     if [ -d $pluginDir ]; then
         cd $pluginDir
-        echo "Updating $dirName"
+        echo -e "Updating ${GREEN}${dirName}${NC}"
         git pull
     else
         cd $VIM_BUNDLE_DIR
-        echo "Cloning $dirName"
+        echo -e "Cloning ${GREEN}${dirName}${NC}"
         git clone $gitUrl
     fi
+    echo
 }
 
 addColour() {
     if [ $# -ne 1 ]; then
-        echo "Invalid args to addColour"
+        echo -e "${RED}Invalid args to addColour${NC}"
         exit 1
     fi
     gitUrl=$1
@@ -39,7 +47,7 @@ addColour() {
     mkdir -p $latestDir
     wget --directory-prefix=$latestDir $gitUrl
     if [ $? -ne 0 ]; then
-        echo "Something went wrong fetching $gitUrl into $colorsDir"
+        echo -e "${RED}Something went wrong fetching ${GREEN}${gitUrl}${NC} into ${GREEN}${colorsDir}${NC}"
         exit 1
     fi
     mv $latestDir/*.vim $colorsDir
@@ -76,6 +84,7 @@ addPlugin "vim-markdown-folding"            "https://github.com/nelstrom/vim-mar
 addPlugin "tabular"                         "https://github.com/godlygeek/tabular.git"
 addPlugin "vim-move"                        "https://github.com/matze/vim-move.git"
 # ack.vim requires the perl tool Ack which can be obtained from the packager manager as 'ack-grep'
+# or silversearcher-ag for even faster searches
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git"
 addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj-user.git"
 addPlugin "vim-textobj-function"            "https://github.com/kana/vim-textobj-function.git"
@@ -108,4 +117,6 @@ addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/moloka
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Eighties.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Bright.vim"
+
+command -v ag 1>/dev/null || echo "${RED}ag (Silver Searcher) is not installed (this is used by ctrl-p and ack.vim), install using: 'apt-get install silversearcher-ag'${NC}"
 

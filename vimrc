@@ -132,6 +132,9 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline_symbols.space = "\ua0"
 
+" prefix the filename (%t) with the current working dir, max 30chars
+let g:airline_section_c = '%-0.30{getcwd()}/%t'
+
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'

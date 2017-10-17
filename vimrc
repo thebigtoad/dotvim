@@ -58,6 +58,13 @@ set t_Co=256
 set showmode
 set showcmd
 
+" tab completion in command mode like zsh
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set wildmenu
+"set wildmode=full
+set wildmode=list:longest,list:full
+set wildignore=.git,*.swp,*/tmp/*
+
 " Markdown specific settings
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

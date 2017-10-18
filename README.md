@@ -53,11 +53,11 @@ Install the following font in linux, then set it as font for the terminal
 ## Basic commands for installed plugins
 
 ### NerdTree 
-* Toggle NerdTree = `<Leader>'`
+* Toggle NerdTree = `<leader>'`
 
 ### Nerd Commenter
-* Toggle comment state of current line or [count] lines = `[count]<Leader>c<space>`
-* Yank then comment current line or [count] lines = `[count]<Leader>cy`
+* Toggle comment state of current line or [count] lines = `[count]<leader>c<space>`
+* Yank then comment current line or [count] lines = `[count]<leader>cy`
 
 ### vim-sneak
 * Search forward for 'xx' = `sxx`
@@ -65,11 +65,13 @@ Install the following font in linux, then set it as font for the terminal
 * Delete up to 'xx' = `dzxx`
 
 ### Ctrl-P
-* Open Ctrl-P = `<ctrl-p>`
+* Open Ctrl-P in files mode= `<leader>p`
+* Open Ctrl-P in buffers mode= `<leader>b`
+* Open Ctrl-P in MRU mode= `<leader>m`
 
 ### vim-easymove
-* Search forward = `<Leader><Leader>w`
-* Search back = `<Leader><Leader>b`
+* Search forward = `<leader><leader>w`
+* Search back = `<leader><leader>b`
 
 ### vim-fugitive
 * Git status = `:Gst` or `<leader>gs`

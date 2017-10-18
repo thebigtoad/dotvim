@@ -124,7 +124,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 
 " put a buffer list at the top
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 "let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline#extensions#tabline#fnamecollapse = 1
 "let g:airline#extensions#tabline#fnametruncate = 20
@@ -347,6 +347,12 @@ endif
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_map = '<leader>p'
+"open ctrl-p in buffer mode
+nmap <leader>b :CtrlPBuffer<CR>
+"open ctrl-p in most recently used mode
+nmap <leader>m :CtrlPMRU<CR>
+"open ctrl-p in files mode in the root of git_work
+nmap <leader>gw :CtrlP ~/git_work<CR>
 
 
 "ack.vim

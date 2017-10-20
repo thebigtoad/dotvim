@@ -31,7 +31,7 @@ addPlugin(){
     else
         cd $VIM_BUNDLE_DIR
         echo -e "Cloning ${GREEN}${dirName}${NC}"
-        git clone $gitUrl
+        git clone --depth 1 $gitUrl
     fi
     echo
 }
@@ -111,6 +111,7 @@ addPlugin "youcompleteme"                   "https://github.com/valloric/youcomp
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 #groovy indenting
 addPlugin "groovyindent-unix"               "https://github.com/vim-scripts/groovyindent-unix.git"
+addPlugin "fzf"                             "https://github.com/junegunn/fzf.git"
 
 
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"
@@ -118,5 +119,7 @@ addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Eighties.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night-Bright.vim"
 
-command -v ag 1>/dev/null || echo "${RED}ag (Silver Searcher) is not installed (this is used by ctrl-p and ack.vim), install using: 'apt-get install silversearcher-ag'${NC}"
+command -v ag 1>/dev/null || echo -e "\n${RED}ag (Silver Searcher) is not installed (this is used by ctrl-p, ack.vim and FZF), install using: 'apt-get install silversearcher-ag'${NC}"
+
+[[ -f ~/.fzf.zsh ]] || echo -e "\n${RED}FZF is not installed, run 'install' in ~/.vim/bundle/fzf${NC}"
 

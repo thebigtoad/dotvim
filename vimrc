@@ -52,11 +52,13 @@ set nocompatible
 "keep 3 lines of context when scrolling
 set scrolloff=3
 
-set ttimeoutlen=50
 set laststatus=2
 set t_Co=256
 set showmode
 set showcmd
+" reduce delay waiting for a mapping/key code to complete
+set timeoutlen=500
+set ttimeoutlen=50
 
 " tab completion in command mode like zsh
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,9 +234,9 @@ noremap <leader>s :sp<CR><C-w><C-w>
 "Insert shell colour constants for use in 'echo -e'                                                                                                                                                  
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 noremap <leader>colours :set paste<CR>i#Colour constants for use in echo -e statements<CR>RED='\033[1;31m'<CR>GREEN='\033[1;32m'<CR>YELLOW='\033[1;33m'<CR>BLUE='\033[1;34m'<CR>NC='\033[0m' # No Colour<CR><ESC>:set nopaste<CR>
-noremap <leader>blue i${BLUE}<ESC>
+noremap <leader>blu i${BLUE}<ESC>
 noremap <leader>red i${RED}<ESC>
-noremap <leader>green i${GREEN}<ESC>
+noremap <leader>grn i${GREEN}<ESC>
 noremap <leader>yel i${YELLOW}<ESC>
 noremap <leader>nc i${NC}<ESC>
 "insert an 'echo -e ""' and put it in insert mode in the quotes
@@ -357,13 +359,53 @@ endif
 " ctrl-p
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_map = '<leader>p'
+"let g:ctrlp_map = '<leader>p'
 "open ctrl-p in buffer mode
-nmap <leader>b :CtrlPBuffer<CR>
+"nmap <leader>b :CtrlPBuffer<CR>
 "open ctrl-p in most recently used mode
-nmap <leader>m :CtrlPMRU<CR>
+"nmap <leader>m :CtrlPMRU<CR>
 "open ctrl-p in files mode in the root of git_work
-nmap <leader>gw :CtrlP ~/git_work<CR>
+"nmap <leader>gw :CtrlP ~/git_work<CR>
+
+" FZF (FuzzyFinder)
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"un-comment and chnage this to make vim behave differently to FZF in the shell
+"let $FZF_DEFAULT_COMMAND= 'ag --hidden -g ""'
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Keyword'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Keyword'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+"find files from the git root, rather than current dir
+command! ProjectFiles execute 'Files!' s:find_git_root()
+
+"open FZF in files mode, rooted at the current files dir
+nmap <leader>p :Files!<CR>
+"open FZF in files mode, rooted at the current git root
+nmap <leader>p :ProjectFiles<CR>
+"open FZF in buffer mode, two maps as 'b' is quite slow do to other b... maps
+nmap <leader>b :Buffers!<CR>
+nmap <leader>u :Buffers!<CR>
+"open FZF in history mode (Most recently used)
+nmap <leader>m :History!<CR>
+"open FZF in files mode in the root of git_work
+nmap <leader>gw :Files! ~/git_work<CR>
 
 
 "ack.vim

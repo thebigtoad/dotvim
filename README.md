@@ -10,9 +10,9 @@ To pull down or update all the plugins:
 
     ~/.vim/setupPlugins.sh
 
-To use ack.vim you will need the perl tool 'Ack' which can be obtained from the packager manager as 'ack-grep', e.g. 
+To use ack.vim you will need 'Ack' and 'ag' 
 
-    suso apt-get install ack-grep
+    sudo apt-get install ack-grep silversearcher-ag
 
 Run the following to update help with all the plugins
 
@@ -68,6 +68,9 @@ Install the following font in linux, then set it as font for the terminal
 * Open Ctrl-P in files mode= `<leader>p`
 * Open Ctrl-P in buffers mode= `<leader>b`
 * Open Ctrl-P in MRU mode= `<leader>m`
+
+### vim-buffkill
+* Delete currennt buffer (without closing pane) = `:BD`
 
 ### vim-easymove
 * Search forward = `<leader><leader>w`

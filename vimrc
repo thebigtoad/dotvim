@@ -231,7 +231,7 @@ noremap <leader>s :sp<CR><C-w><C-w>
 
 "Insert shell colour constants for use in 'echo -e'                                                                                                                                                  
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-noremap <leader>colours i#Colour constants for use in echo -e statements<CR>RED='\033[1;31m'<CR>GREEN='\033[1;32m'<CR>YELLOW='\033[1;33m'<CR>BLUE='\033[1;34m'<CR>NC='\033[0m' # No Colour<CR>
+noremap <leader>colours :set paste<CR>i#Colour constants for use in echo -e statements<CR>RED='\033[1;31m'<CR>GREEN='\033[1;32m'<CR>YELLOW='\033[1;33m'<CR>BLUE='\033[1;34m'<CR>NC='\033[0m' # No Colour<CR><ESC>:set nopaste<CR>
 noremap <leader>blue i${BLUE}<ESC>
 noremap <leader>red i${RED}<ESC>
 noremap <leader>green i${GREEN}<ESC>

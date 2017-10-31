@@ -395,6 +395,8 @@ endfunction
 "find files from the git root, rather than current dir
 command! ProjectFiles execute 'Files!' s:find_git_root()
 
+"open FZF in lines mode
+nmap <leader>l :Lines!<CR>
 "open FZF in files mode, rooted at the current files dir
 nmap <leader>p :Files!<CR>
 "open FZF in files mode, rooted at the current git root

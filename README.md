@@ -64,10 +64,11 @@ Install the following font in linux, then set it as font for the terminal
 * Search backward for 'xx' = `Sxx`
 * Delete up to 'xx' = `dzxx`
 
-### Ctrl-P
-* Open Ctrl-P in files mode= `<leader>p`
-* Open Ctrl-P in buffers mode= `<leader>b`
-* Open Ctrl-P in MRU mode= `<leader>m`
+### FZF
+* Open FZF in lines mode (lines in current buffer) = `<leader>l`
+* Open FZF in files mode (filenames in current repo) = `<leader>p`
+* Open FZF in buffers mode (filenames in open buffers) = `<leader>b`
+* Open FZF in MRU mode (filenames in history or open buffers)= `<leader>m`
 
 ### vim-buffkill
 * Delete currennt buffer (without closing pane) = `:BD`

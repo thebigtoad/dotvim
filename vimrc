@@ -203,6 +203,11 @@ vnoremap > >gv
 " Get rid of highlighting
 noremap <leader>h :noh<CR>
 
+" Insert the current git branch name, stripping the text after the issue                                                                                                                             
+" number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
+noremap <leader>i :-1read !git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
+
+
 " Hitting jk will jump out of insert mode
 inoremap jk <esc>
 
@@ -392,9 +397,19 @@ function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 
+function! s:current_word()
+  return expand('<cword>')
+endfunction
+
 "find files from the git root, rather than current dir
 command! ProjectFiles execute 'Files!' s:find_git_root()
 
+"find occurences from the git root, rather than current dir
+command! WordOccurences execute 'Ag!' s:current_word() s:find_git_root()
+
+"Use FZF/Ag to list occurances of current word (smart case match)
+"nmap <leader>o :Ag! <C-R><C-w> call s:find_git_root()<CR>
+nmap <leader>o :WordOccurences<CR>
 "open FZF in lines mode
 nmap <leader>l :Lines!<CR>
 "open FZF in files mode, rooted at the current files dir

@@ -73,7 +73,6 @@ set wildignore=.git,*.swp,*/tmp/*
 " Don't break lines on words in markdown
 autocmd Filetype markdown setlocal linebreak
 
-
 " live life on the edge - don't create swap files
 set noswapfile
 
@@ -205,7 +204,7 @@ noremap <leader>h :noh<CR>
 
 " Insert the current git branch name, stripping the text after the issue                                                                                                                             
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
-noremap <leader>i :-1read !git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
+noremap <leader>i :-1read ![[ "$(pwd)" =~ .*/\.git ]] && cd ..; git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
 
 
 " Hitting jk will jump out of insert mode

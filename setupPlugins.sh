@@ -115,6 +115,7 @@ addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-t
 addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj-user.git"
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
+addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml.git"
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 
 #Add various colour schemes

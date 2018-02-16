@@ -30,9 +30,12 @@ Install the following font in linux, then set it as font for the terminal
 * Substitute (formally 's') = `cl`
 * Substitute line (formally 'S') = `cc`
 * Fix line breaks in hard wrapped paragraph = `gqip`
-* Jump to last character = `g_`
 * Increment/decrement a number = `<ctrl>a` / `<ctrl>x`
+* Open quicklist = `:cw`
 
+### Navigation
+* Jump to last character = `g_`
+* Jump backwards/forwards in jump list = `<ctrl>o` / `<ctrl>i`
 
 ### Folds
 * Turn on syntax based folding = `:setlocal foldmethod=syntax`

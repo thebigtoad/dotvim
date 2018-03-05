@@ -39,6 +39,9 @@ set smartindent
 
 autocmd FileType python setlocal nosmartindent
 
+" Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
+autocmd BufRead,BufNewFile *.template set filetype=text
+
 " searching
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set ignorecase

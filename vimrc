@@ -480,6 +480,15 @@ let g:sneak#streak = 1
 "use colour scheme's colours for normal mode
 let g:conoline_use_colorscheme_default_normal=1
 
+if &diff
+    "in diff mode so disable conoline as it doesn't work with diff's colour
+    "scheme
+    let g:conoline_auto_enable = 0
+else
+    "enable conoline
+    let g:conoline_auto_enable = 1
+endif
+
 " YouCompleteMe stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " clear the black list so we also get completion, e.g. in markdown

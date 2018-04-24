@@ -83,11 +83,6 @@ addPlugin "nerdcommenter"                   "https://github.com/scrooloose/nerdc
 addPlugin "nerdtree"                        "https://github.com/scrooloose/nerdtree.git"
 addPlugin "syntastic"                       "https://github.com/scrooloose/syntastic.git"
 addPlugin "tabular"                         "https://github.com/godlygeek/tabular.git"
-#YouCompleteMe is heavyweight and needs node/npm and the following
-#sudo apt-get install -y build-essential cmake python-dev python3-dev
-#cd ~/.vim/bundle/youcompleteme
-#git submodule update --init --recursive
-#./install.py --tern-completer
 addPlugin "vim-abolish"                     "https://github.com/tpope/vim-abolish.git"
 addPlugin "vim-airline"                     "https://github.com/bling/vim-airline.git"
 addPlugin "vim-airline-themes"              "https://github.com/vim-airline/vim-airline-themes.git"
@@ -116,6 +111,11 @@ addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
 addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml.git"
+#YouCompleteMe is heavyweight and needs node/npm and the following
+#sudo apt-get install -y build-essential cmake python-dev python3-dev
+#cd ~/.vim/bundle/youcompleteme
+#git submodule update --init --recursive
+#./install.py --tern-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 
 #Add various colour schemes

@@ -31,7 +31,6 @@ Install the following font in linux, then set it as font for the terminal
 * Substitute line (formally 'S') = `cc`
 * Fix line breaks in hard wrapped paragraph = `gqip`
 * Increment/decrement a number = `<ctrl>a` / `<ctrl>x`
-* Open quicklist = `:cw`
 
 ### Navigation
 * Jump to last character = `g_`
@@ -48,6 +47,7 @@ Install the following font in linux, then set it as font for the terminal
 ### Windows
 * Maximise a window pane = `<leader>-`
 * Re-balance all window panes = `<leader>=`
+* Toggle quickfix window = `<leader>q`
 
 ### Spelling
 * Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`

@@ -497,10 +497,12 @@ else
     let g:conoline_auto_enable = 1
 endif
 
+
 " YouCompleteMe stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " clear the black list so we also get completion, e.g. in markdown
 let g:ycm_filetype_blacklist = {}
+
 
 " vim-expand-region stuff                                                                                                                                                         
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                      
@@ -548,6 +550,17 @@ let g:expand_region_text_objects_markdown = {
 
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
+
+
+" vim-togglelist stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Prevent mapping <leader>l to the location list as this would clash with FZF
+let g:toggle_list_no_mappings=1
+
+" map <leader>q to toggle the quickfix window
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+
 
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

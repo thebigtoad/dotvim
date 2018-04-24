@@ -110,6 +110,7 @@ addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-t
 addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj-user.git"
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
+addPlugin "vim-togglelist"                  "https://github.com/milkypostman/vim-togglelist.git"
 addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml.git"
 #YouCompleteMe is heavyweight and needs node/npm and the following
 #sudo apt-get install -y build-essential cmake python-dev python3-dev

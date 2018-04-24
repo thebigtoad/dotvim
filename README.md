@@ -26,7 +26,7 @@ Install the following font in linux, then set it as font for the terminal
 
 **Note:** The '|' character in an example indicates cursor position.
 
-* Leader key = \
+* Leader key = `<space>`
 * Substitute (formally 's') = `cl`
 * Substitute line (formally 'S') = `cc`
 * Fix line breaks in hard wrapped paragraph = `gqip`
@@ -44,6 +44,10 @@ Install the following font in linux, then set it as font for the terminal
 * Toggle fold under cursor = `za`
 * Open all folds under cursor = `zO`
 * Set fold level 0-9 = `z0` - `z9`
+
+### Windows
+* Maximise a window pane = `<leader>-`
+* Re-balance all window panes = `<leader>=`
 
 ### Spelling
 * Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`
@@ -87,7 +91,7 @@ Install the following font in linux, then set it as font for the terminal
 * Git pull = `:Gpull`
 * Git push = `:Gpush` or `<leader>gp`
 
-In the git status window
+#### git status window
 
 * Add/remove file from git index = `-`
 * Commit = `cc`

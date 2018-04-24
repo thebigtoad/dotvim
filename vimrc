@@ -27,6 +27,7 @@ endif
 " change colour of brace matching highlight
 highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
 
+
 " set up tab spacing
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set tabstop=8
@@ -41,6 +42,9 @@ autocmd FileType python setlocal nosmartindent
 
 " Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
 autocmd BufRead,BufNewFile *.template set filetype=text
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 " searching
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,6 +183,11 @@ map <space> <leader>
 "Specific mapping for easymotion
 map <space><space> <leader><leader>
 
+" maximise a window pane
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+
+" rebalance window panes
+nnoremap <leader>= :wincmd =<cr>
 
 "Swap j <=> gj and k <=> gk
 "Also  prevent the swap if a count has been prefixed, e.g. 10k
@@ -208,7 +217,6 @@ noremap <leader>h :noh<CR>
 " Insert the current git branch name, stripping the text after the issue                                                                                                                             
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
 noremap <leader>i :-1read ![[ "$(pwd)" =~ .*/\.git ]] && cd ..; git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
-
 
 " Hitting jk will jump out of insert mode
 inoremap jk <esc>
@@ -534,6 +542,12 @@ let g:expand_region_text_objects_markdown = {
       \ 'ip' :0,
       \ 'ap' :0,
       \ }
+
+" vim-tmux-navigator stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
 
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

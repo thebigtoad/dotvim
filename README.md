@@ -6,13 +6,13 @@ Run:
 
     git clone git@github.com:thebigtoad/dotvim.git ~/.vim
  
-To pull down or update all the plugins:
-
-    ~/.vim/setupPlugins.sh
-
 To use ack.vim you will need 'Ack' and 'ag' 
 
     sudo apt-get install ack-grep silversearcher-ag
+
+To pull down or update all the plugins:
+
+    ~/.vim/setupPlugins.sh
 
 Run the following to update help with all the plugins
 

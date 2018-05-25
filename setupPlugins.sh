@@ -97,6 +97,7 @@ addPlugin "vim-json"                        "https://github.com/elzr/vim-json.gi
 addPlugin "vim-markdown"                    "https://github.com/plasticboy/vim-markdown.git"
 addPlugin "vim-markdown-folding"            "https://github.com/nelstrom/vim-markdown-folding.git"
 addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git" #requires python, grip, xdotool and a browser to function
+addPlugin "vim-markdown-toc"                "https://github.com/mzlogin/vim-markdown-toc.git"
 addPlugin "vim-move"                        "https://github.com/matze/vim-move.git"
 addPlugin "vim-repeat"                      "https://github.com/tpope/vim-repeat.git"
 addPlugin "vim-scala"                       "https://github.com/derekwyatt/vim-scala.git"

@@ -80,6 +80,10 @@ set wildignore=.git,*.swp,*/tmp/*
 " Don't break lines on words in markdown
 autocmd Filetype markdown setlocal linebreak
 
+" Specify languages to ssyntax highlight in markdown code blocks
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json', 'html', 'python', 'bash=sh', 'java']
+
+
 " live life on the edge - don't create swap files
 set noswapfile
 

@@ -204,6 +204,24 @@ nnoremap gk k
 " K to split a line
 :nnoremap K i<CR><Esc>
 
+" now remap gJ to J for cases when we want to do the opposite
+nnoremap gJ J
+
+" Like gJ, but always remove spaces
+fun! JoinSpaceless()
+    execute 'normal gJ'
+
+    " Character under cursor is whitespace?
+    if matchstr(getline('.'), '\%' . col('.') . 'c.') =~ '\s'
+        " When remove it!
+        execute 'normal dw'
+    endif
+endfun
+
+" Replace default J behaviour with one that doesn't add the extra space between
+" joined lines
+nnoremap J :call JoinSpaceless()<CR>
+
 "buffer cycling
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>

@@ -79,6 +79,7 @@ addPlugin "fonts"                           "https://github.com/powerline/fonts.
 addPlugin "fzf"                             "https://github.com/junegunn/fzf.git" #FuzzyFinder binaries
 addPlugin "fzf.vim"                         "https://github.com/junegunn/fzf.vim.git" #FuzzyFinder vim plugin
 addPlugin "groovyindent-unix"               "https://github.com/vim-scripts/groovyindent-unix.git" #groovy indenting
+addPlugin "gv.vim"                          "https://github.com/junegunn/gv.vim.git"
 addPlugin "nerdcommenter"                   "https://github.com/scrooloose/nerdcommenter.git"
 addPlugin "nerdtree"                        "https://github.com/scrooloose/nerdtree.git"
 addPlugin "syntastic"                       "https://github.com/scrooloose/syntastic.git"
@@ -112,6 +113,7 @@ addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
 addPlugin "vim-togglelist"                  "https://github.com/milkypostman/vim-togglelist.git"
+addPlugin "vim-twiggy"                      "https://github.com/sodapopcan/vim-twiggy.git"
 addPlugin "vim-unimpaired"                  "https://github.com/tpope/vim-unimpaired.git"
 addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml.git"
 #YouCompleteMe is heavyweight and needs node/npm and the following

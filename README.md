@@ -97,6 +97,24 @@ Install the following font in linux, then set it as font for the terminal
 * Commit = `cc`
 * Diff the file under cursor = `D`
 
+#### gv.vim (git log viewer)
+
+* View commit log = `:GV`
+* View commit log (current file ony) = `:GV!`
+* Open commit or range of commits = `o` or `<CR>`
+
+#### vim-twiggy (git branch viewer/manger)
+* Open Twiggy = `:Twiggy`
+* Checkout a branch = `c`
+* Merge selected branch into current branch = `m`
+* Fetch selected branch = `F`
+* Delete a branch = `dd`
+* Push `^`
+* Pull `V`
+* Show commits for branch under cursor = `gl`
+* Show commits from branch under cursor to current branch = `gL`
+* Quit = `q`
+
 ### vim-surround
 [Where * = ", ', [, {, (, t ]
 

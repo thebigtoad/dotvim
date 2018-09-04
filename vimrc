@@ -303,12 +303,13 @@ let g:gitgutter_sign_modified_removed = '⛔'
 set relativenumber
 set number
 if !has('nvim')
-    if !exists("b:curr_num_state")
-        let b:curr_num_state = "rel"
-    endif
 
     "Toggle between line number states (relative|absolute|none)
     function! NumberToggle()
+      if !exists("b:curr_num_state")
+          let b:curr_num_state = "rel"
+      endif
+
       if(b:curr_num_state ==# "rel")
         set number
         set norelativenumber

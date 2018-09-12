@@ -46,6 +46,10 @@ autocmd BufRead,BufNewFile *.template set filetype=text
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" Treat other file types as zip files
+autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<amatch>"))
+
+
 " searching
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set ignorecase
@@ -381,6 +385,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+" Stop syntastic from checking java files
+let g:loaded_syntastic_java_javac_checker = 1
 
 
 "vim-markdown stuff

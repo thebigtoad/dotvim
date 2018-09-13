@@ -72,10 +72,11 @@ Install the following font in linux, then set it as font for the terminal
 * Delete up to 'xx' = `dzxx`
 
 ### FZF
-* Open FZF in lines mode (lines in current buffer) = `<leader>l`
-* Open FZF in files mode (filenames in current repo) = `<leader>p`
+* Open FZF in lines mode (all lines in open buffers) = `<leader>l`
+* Open FZF in files mode (filenames in current git repo) = `<leader>p`
 * Open FZF in buffers mode (filenames in open buffers) = `<leader>b`
 * Open FZF in MRU mode (filenames in history or open buffers)= `<leader>m`
+* Use FZF to select a sub-directory of ~/git_work and _cd_ to it= `<leader>d`
 
 ### vim-buffkill
 * Delete currennt buffer (without closing pane) = `:BD`

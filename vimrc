@@ -453,23 +453,27 @@ command! ProjectFiles execute 'Files!' s:find_git_root()
 "find occurences from the git root, rather than current dir
 command! WordOccurences execute 'Ag!' s:current_word() s:find_git_root()
 
+" Use FZF to change current directory to a direct child of the passed
+" directory
+command! -nargs=* -complete=dir Cd call fzf#run(fzf#wrap(
+  \ {'source': 'find '.(empty(<f-args>) ? '.' : <f-args>).' -maxdepth 1 -type d -not -wholename "./.git*"',
+  \  'sink': 'cd'}, 1))
+
 "Use FZF/Ag to list occurances of current word (smart case match)
 "nmap <leader>o :Ag! <C-R><C-w> call s:find_git_root()<CR>
 nmap <leader>o :WordOccurences<CR>
 "open FZF in lines mode
 nmap <leader>l :Lines!<CR>
-"open FZF in files mode, rooted at the current files dir
-nmap <leader>p :Files!<CR>
 "open FZF in files mode, rooted at the current git root
 nmap <leader>p :ProjectFiles<CR>
-"open FZF in buffer mode, two maps as 'b' is quite slow do to other b... maps
-nmap <leader>b :Buffers!<CR>
+"open FZF in bUffer mode, 'b' is quite slow as there are other b... maps
 nmap <leader>u :Buffers!<CR>
 "open FZF in history mode (Most recently used)
 nmap <leader>m :History!<CR>
 "open FZF in files mode in the root of git_work
 nmap <leader>gw :Files! ~/git_work<CR>
-
+" Use FZF to change current directory to one of the git repos in git_work
+nmap <leader>d :Cd ~/git_work<CR>
 
 "ack.vim
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

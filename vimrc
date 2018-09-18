@@ -49,6 +49,8 @@ autocmd VimResized * :wincmd =
 " Treat other file types as zip files
 autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<amatch>"))
 
+" Insert a newly generated UUID at the cursor position
+:command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
 
 " searching
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

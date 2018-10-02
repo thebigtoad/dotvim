@@ -29,7 +29,7 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
 
 
 " set up tab spacing
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set tabstop=8
 set softtabstop=0
 set expandtab
@@ -43,14 +43,14 @@ autocmd FileType python setlocal nosmartindent
 " Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
 autocmd BufRead,BufNewFile *.template set filetype=text
 
-" automatically rebalance windows on vim resize
+" Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
 " Treat other file types as zip files
 autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<amatch>"))
 
 " Insert a newly generated UUID at the cursor position
-:command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
+command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
 
 " searching
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,26 +62,26 @@ set hlsearch
 set title
 set nocompatible
 
-"keep 3 lines of context when scrolling
+" keep 3 lines of context when scrolling
 set scrolloff=3
 
 set laststatus=2
 set t_Co=256
 set showmode
 set showcmd
-" reduce delay waiting for a mapping/key code to complete
+" Reduce delay waiting for a mapping/key code to complete
 set timeoutlen=500
 set ttimeoutlen=50
 
-" tab completion in command mode like zsh
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Tab completion in command mode like zsh
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set wildmenu
 "set wildmode=full
 set wildmode=list:longest,list:full
 set wildignore=.git,*.swp,*/tmp/*
 
 " Markdown specific settings
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " Don't break lines on words in markdown
 autocmd Filetype markdown setlocal linebreak
@@ -90,7 +90,7 @@ autocmd Filetype markdown setlocal linebreak
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json', 'html', 'python', 'bash=sh', 'java']
 
 
-" live life on the edge - don't create swap files
+" Live life on the edge - don't create swap files
 set noswapfile
 
 if v:version > 703 || v:version == 703 && has("patch541")
@@ -98,9 +98,9 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 
 " Folding stuff
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-" enable folding but open all folds on open
+" Enable folding but open all folds on open
 set foldenable
 set foldmethod=indent
 if has("autocmd")
@@ -133,15 +133,14 @@ let vim_markdown_preview_hotkey='<C-m>'
 
 
 
-
 " vim-air-line
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:airline_powerline_fonts = 1
 
-" don't count trailing whitespace since it lags in huge files
+" Don't count trailing whitespace since it lags in huge files
 let g:airline#extensions#whitespace#enabled = 0
 
-" put a buffer list at the top
+" Put a buffer list at the top
 let g:airline#extensions#tabline#enabled = 0
 "let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline#extensions#tabline#fnamecollapse = 1
@@ -157,10 +156,10 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline_symbols.space = "\ua0"
 
-" prefix the filename (%t) with the current working dir, max 30chars
+" Prefix the filename (%t) with the current working dir, max 30chars
 let g:airline_section_c = '%-0.30{getcwd()}/%t'
 
-" unicode symbols
+" Unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -174,7 +173,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
+" Airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -185,32 +184,32 @@ let g:airline_symbols.linenr = ''
 
 
 " Assorted key bindings
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"Use space as the leader                                                                                                                                                          
+" Use space as the leader                                                                                                                                                          
 map <space> <leader>
 
-"Specific mapping for easymotion
+" Specific mapping for easymotion
 map <space><space> <leader><leader>
 
-" maximise a window pane
+" Maximise a window pane
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 
-" rebalance window panes
+" Rebalance window panes
 nnoremap <leader>= :wincmd =<cr>
 
-"Swap j <=> gj and k <=> gk
-"Also  prevent the swap if a count has been prefixed, e.g. 10k
-"to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines
+" Swap j <=> gj and k <=> gk
+" Also  prevent the swap if a count has been prefixed, e.g. 10k
+" to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap gj j
 nnoremap gk k
 
 " K to split a line
-:nnoremap K i<CR><Esc>
+nnoremap K i<CR><Esc>
 
-" now remap gJ to J for cases when we want to do the opposite
+" Now remap gJ to J for cases when we want to do the opposite
 nnoremap gJ J
 
 " Like gJ, but always remove spaces
@@ -228,14 +227,14 @@ endfun
 " joined lines
 nnoremap J :call JoinSpaceless()<CR>
 
-"buffer cycling
+" Buffer cycling
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-"Y yanks to end of line
+" Y yanks to end of line
 nmap Y y$
 
-"make < > shifts keep selection
+" Make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
 
@@ -246,10 +245,14 @@ noremap <leader>h :noh<CR>
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
 noremap <leader>i :-1read ![[ "$(pwd)" =~ .*/\.git ]] && cd ..; git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
 
-" Hitting jk will jump out of insert mode
+" Hitting jk/kj will jump out of insert mode
 inoremap jk <esc>
+inoremap kj <esc>
 
-"make C-Space do the same as C-n. C-Space is seen by vim as C-@
+" Toggle line wrapping
+nnoremap <leader>w :set wrap!<cr>
+
+" Make C-Space do the same as C-n. C-Space is seen by vim as C-@
 inoremap <C-@> <C-n>
 
 " toggle spell checking in the local buffer with F7
@@ -260,7 +263,7 @@ map <F7> :ConoLineToggle<CR>:setlocal spell! spelllang=en_gb<CR>
 
 
 " Window split stuff
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " window split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -274,8 +277,8 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 " Horizontal split
 noremap <leader>s :sp<CR><C-w><C-w>
 
-"Insert shell colour constants for use in 'echo -e'                                                                                                                                                  
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Insert shell colour constants for use in 'echo -e'                                                                                                                                                  
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 noremap <leader>colours :set paste<CR>i#Colour constants for use in echo -e statements<CR>RED='\033[1;31m'<CR>GREEN='\033[1;32m'<CR>YELLOW='\033[1;33m'<CR>BLUE='\033[1;34m'<CR>NC='\033[0m' # No Colour<CR><ESC>:set nopaste<CR>
 noremap <leader>blu i${BLUE}<ESC>
 noremap <leader>red i${RED}<ESC>
@@ -287,7 +290,7 @@ noremap <leader>echo iecho -e ""<ESC>i
 
 
 " GitGutter stuff
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Toggle gigGutter
 noremap <leader>gg :GitGutterToggle<CR>
 
@@ -304,8 +307,8 @@ let g:gitgutter_sign_removed = '━'
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = '⛔'
 
-"line numbering
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" line numbering
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set relativenumber
 set number
 if !has('nvim')
@@ -335,9 +338,9 @@ if !has('nvim')
 endif
 
 
-"Cursor keys == BAD!
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Prevent use of cursor keys in insert mode
+" Cursor keys == BAD!
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"  Prevent use of cursor keys in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -350,9 +353,9 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 
 
-"Script to stop vim overwriting the default register
-"when pasting over a visual selection
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Script to stop vim overwriting the default register
+" when pasting over a visual selection
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " I haven't found how to hide this function (yet)
 function! RestoreRegister()

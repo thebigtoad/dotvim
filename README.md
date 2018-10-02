@@ -27,10 +27,20 @@ Install the following font in linux, then set it as font for the terminal
 **Note:** The '|' character in an example indicates cursor position.
 
 * Leader key = `<space>`
+* Escape key = `jk` or `kj`
+
 * Substitute (formally 's') = `cl`
 * Substitute line (formally 'S') = `cc`
 * Fix line breaks in hard wrapped paragraph = `gqip`
 * Increment/decrement a number = `<ctrl>a` / `<ctrl>x`
+* Generate a UUID as the cursor position = `:Uuid`
+* Toggle line wrapping = `<leader>w`
+* Hide search highlighting = `<leader>h`
+* Toggle line numbering (relative|absolute|none) = `<ctrl>n`
+
+### Buffers
+* Next buffer = `<Tab>`
+* Previous buffer = `<S-Tab>`
 
 ### Navigation
 * Jump to last character = `g_`
@@ -45,13 +55,15 @@ Install the following font in linux, then set it as font for the terminal
 * Set fold level 0-9 = `z0` - `z9`
 
 ### Windows
+* Vertical split = `<leader>v`
+* Horizontal split = `<leader>h`
 * Maximise a window pane = `<leader>-`
 * Re-balance all window panes = `<leader>=`
 * Toggle quickfix window = `<leader>q`
+* Navigate between window panes = `<ctrl>h` / `<ctrl>j` / `<ctrl>k` / `<ctrl>l`
 
 ### Spelling
-* Turn on spell checking for the open buffer = `:setlocal spell spelllang=en_gb`
-* Turn off spell checking for the open buffer = `:setlocal nospell`
+* Toggle spell checking for the open buffer = `F8`
 * Next spelling mistake = `]s`
 * Previous spelling mistake = `[s`
 * Add word under cursor to word list = `zg`
@@ -75,8 +87,8 @@ Install the following font in linux, then set it as font for the terminal
 * Open FZF in lines mode (all lines in open buffers) = `<leader>l`
 * Open FZF in files mode (filenames in current git repo) = `<leader>p`
 * Open FZF in buffers mode (filenames in open buffers) = `<leader>b`
-* Open FZF in MRU mode (filenames in history or open buffers)= `<leader>m`
-* Use FZF to select a sub-directory of ~/git_work and _cd_ to it= `<leader>d`
+* Open FZF in MRU mode (filenames in history or open buffers) = `<leader>m`
+* Use FZF to select a sub-directory of ~/git_work and _cd_ to it = `<leader>d`
 
 ### vim-buffkill
 * Delete currennt buffer (without closing pane) = `:BD`
@@ -84,6 +96,10 @@ Install the following font in linux, then set it as font for the terminal
 ### vim-easymove
 * Search forward = `<leader><leader>w`
 * Search back = `<leader><leader>b`
+
+### vim-expand-region
+* Expand selection around cursor = `+`
+* Shrink selection around cursor = `_`
 
 ### vim-fugitive
 * Git status = `:Gst` or `<leader>gs`
@@ -93,13 +109,15 @@ Install the following font in linux, then set it as font for the terminal
 * Git push = `:Gpush` or `<leader>gp`
 
 #### git status window
-
 * Add/remove file from git index = `-`
 * Commit = `cc`
 * Diff the file under cursor = `D`
+* Insert issue from git branch name (e.g. _gh-123_) = `<leader>i`
+
+### git-gutter
+* Toggle git-gutter = `gg`
 
 #### gv.vim (git log viewer)
-
 * View commit log = `:GV`
 * View commit log (current file ony) = `:GV!`
 * Open commit or range of commits = `o` or `<CR>`

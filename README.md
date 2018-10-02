@@ -22,6 +22,8 @@ Install the following font in linux, then set it as font for the terminal
     
     ~/.vim/bundle/fonts/Meslo/Meslo LG M Regular for Powerline.otf
 
+To see all the plugins in use (or to add more) look in [setupPlugins.sh](https://github.com/thebigtoad/dotvim/blob/master/setupPlugins.sh).
+
 ## Useful Vim commands, some of which may be specific to this vimrc
 
 **Note:** The '|' character in an example indicates cursor position.

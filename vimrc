@@ -600,6 +600,13 @@ let g:toggle_list_no_mappings=1
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 
+" vim-rooter stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin to change directory to the root of the repository
+
+let g:rooter_silent_chdir = 1
+
+
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if has('nvim')

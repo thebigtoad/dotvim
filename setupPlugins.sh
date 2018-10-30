@@ -101,6 +101,7 @@ addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vi
 addPlugin "vim-markdown-toc"                "https://github.com/mzlogin/vim-markdown-toc.git"
 addPlugin "vim-move"                        "https://github.com/matze/vim-move.git"
 addPlugin "vim-repeat"                      "https://github.com/tpope/vim-repeat.git"
+addPlugin "vim-rooter"                      "https://github.com/airblade/vim-rooter.git"
 addPlugin "vim-scala"                       "https://github.com/derekwyatt/vim-scala.git"
 addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sneak.git"
 addPlugin "vim-surround"                    "https://github.com/tpope/vim-surround.git"

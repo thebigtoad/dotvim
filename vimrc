@@ -27,6 +27,17 @@ endif
 " change colour of brace matching highlight
 highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
 
+" Set up system clipboard integration, so vim yanks write to system clipboard
+" and pastes paste from system clipboard
+" If 
+"     :echo has(clipboard')' 
+" returns 0, then do
+"     sudo apt-get install vim-gtk
+" to enable clipboard support
+if has('clipboard')
+    set clipboard=unnamedplus
+endif
+
 
 " set up tab spacing
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +134,7 @@ nmap z8 :set foldlevel=8<CR>
 nmap z9 :set foldlevel=9<CR>
 
 " Set the current working directory to that of the active file
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 
 
 "vim-markdown-preview
@@ -362,6 +373,11 @@ function! RestoreRegister()
     let @" = s:restore_reg
     if &clipboard == "unnamed"
         let @* = s:restore_reg
+    elseif &clipboard == "unnamedplus"
+        let @+ = s:restore_reg
+    elseif &clipboard == "unnamed,unnamedplus"
+        let @* = s:restore_reg
+        let @+ = s:restore_reg
     endif
     return ''
 endfunction
@@ -378,6 +394,7 @@ vnoremap <silent> <expr> p <sid>Repl()
 "NERDTree
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeChDirMode = 1
 nnoremap <leader>' :NERDTreeToggle<cr>
 
 

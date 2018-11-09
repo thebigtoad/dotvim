@@ -32,11 +32,11 @@ addPlugin(){
 
     if [ -d $pluginDir ]; then
         cd $pluginDir
-        echo -e "Updating ${GREEN}${dirName}${NC}"
+        echo -e "${GREEN}Updating ${BLUE}${dirName}${NC}"
         git pull
     else
         cd $VIM_BUNDLE_DIR
-        echo -e "Cloning ${GREEN}${dirName}${NC}"
+        echo -e "${GREEN}Cloning ${BLUE}${dirName}${NC}"
         git clone --depth 1 $gitUrl
     fi
     echo
@@ -53,23 +53,26 @@ addColour() {
     mkdir -p $latestDir
     wget --directory-prefix=$latestDir $gitUrl
     if [ $? -ne 0 ]; then
-        echo -e "${RED}Something went wrong fetching ${GREEN}${gitUrl}${NC} into ${GREEN}${colorsDir}${NC}"
+        echo -e "${RED}Something went wrong fetching ${BLUE}${gitUrl}${NC} into ${BLUE}${colorsDir}${NC}"
         exit 1
     fi
     mv $latestDir/*.vim $colorsDir
     rmdir $latestDir
 }
 
+setup_pathogen() {
+    echo -e "${GREEN}Getting latest version of ${BLUE}vim-pathogen${NC}"
+    mkdir -p $VIM_BUNDLE_DIR
+    mkdir -p $VIM_AUTOLOAD_DIR
+    curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    echo
+}
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Start of script
 
-mkdir -p $VIM_BUNDLE_DIR
-mkdir -p $VIM_AUTOLOAD_DIR
-
 # make sure pathogen is installed so it can manage the other plugins
-addPlugin "vim-pathogen"   "https://github.com/tpope/vim-pathogen.git"
-cp -u $VIM_PATHOGEN_DIR/autoload/pathogen.vim $VIM_AUTOLOAD_DIR/
-rm -rf $VIM_PATHOGEN_DIR
+setup_pathogen
 
 #Install/update the following plugins, some require additional binaries to work
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git" # requires silversearcher-ag
@@ -124,6 +127,7 @@ addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml
 #./install.py --tern-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 
+echo -e "${GREEN}Adding colour schemes${NC}"
 #Add various colour schemes
 addColour "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim"
 addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim"
@@ -133,5 +137,13 @@ addColour "https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/
 #Checks for certain binaries
 command -v ag 1>/dev/null || echo -e "\n${RED}ag (Silver Searcher) is not installed (this is used by ctrl-p, ack.vim and FZF), install using: 'apt-get install silversearcher-ag'${NC}"
 
-[[ -f ~/.fzf.zsh ]] || echo -e "\n${RED}FZF is not installed, run 'install' in ~/.vim/bundle/fzf${NC}"
+if command -v fzf 1>/dev/null; then
+    echo -e "${GREEN}Installing or updating FZF binary${NC}"
+
+    # Run the install script but only get/update the binary
+    ~/.vim/bundle/fzf/install --bin
+else
+    echo -e "\n${RED}FZF is not installed, run 'install' in ${BLUE}~/.vim/bundle/fzf${NC}"
+fi
+echo
 

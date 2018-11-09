@@ -49,6 +49,11 @@ set smarttab
 set autoindent
 set smartindent
 
+
+" Bespoke filetype handling
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" No smart indenting for python scripts
 autocmd FileType python setlocal nosmartindent
 
 " Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
@@ -59,6 +64,11 @@ autocmd VimResized * :wincmd =
 
 " Treat other file types as zip files
 autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<amatch>"))
+
+" Open .aliases files as sh files to get sh/bash syntax highlighting
+autocmd BufRead,BufNewFile .aliases set filetype=sh
+
+
 
 " Insert a newly generated UUID at the cursor position
 command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
@@ -368,7 +378,6 @@ nnoremap <right> <nop>
 " when pasting over a visual selection
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-" I haven't found how to hide this function (yet)
 function! RestoreRegister()
     let @" = s:restore_reg
     if &clipboard == "unnamed"

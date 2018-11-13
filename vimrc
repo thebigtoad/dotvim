@@ -266,9 +266,8 @@ noremap <leader>h :noh<CR>
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
 noremap <leader>i :-1read ![[ "$(pwd)" =~ .*/\.git ]] && cd ..; git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
 
-" Hitting jk/kj will jump out of insert mode
+" Hitting jk will jump out of insert mode
 inoremap jk <esc>
-inoremap kj <esc>
 
 " Toggle line wrapping
 nnoremap <leader>w :set wrap!<cr>

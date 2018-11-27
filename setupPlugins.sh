@@ -92,6 +92,7 @@ addPlugin "vim-airline"                     "https://github.com/bling/vim-airlin
 addPlugin "vim-airline-themes"              "https://github.com/vim-airline/vim-airline-themes.git"
 addPlugin "vim-bracketed-paste"             "https://github.com/ConradIrwin/vim-bracketed-paste.git"
 addPlugin "vim-bufkill"                     "https://github.com/qpkorr/vim-bufkill" #delete buffers without closing panes
+addPlugin "vim-easy-align"                  "https://github.com/junegunn/vim-easy-align"
 addPlugin "vim-easymotion"                  "https://github.com/easymotion/vim-easymotion.git"
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 addPlugin "vim-fugitive"                    "https://github.com/tpope/vim-fugitive.git"

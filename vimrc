@@ -20,6 +20,11 @@ let g:rehash256 = 1
 colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night-Bright
 
+" Change the vertical split separator and clear its background so you just get
+" a nice thin line
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE
+
 if has('gui_running')
     set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 endif

@@ -99,6 +99,7 @@ addPlugin "vim-easymotion"                  "https://github.com/easymotion/vim-e
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 addPlugin "vim-fugitive"                    "https://github.com/tpope/vim-fugitive.git"
 addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-gitgutter.git"
+addPlugin "vim-indent-line"                 "https://github.com/Yggdroot/indentLine"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
 addPlugin "vim-markdown"                    "https://github.com/plasticboy/vim-markdown.git"

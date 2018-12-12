@@ -165,6 +165,13 @@ let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey='<C-m>'
 
 
+" vim-indent-lines
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:indentLine_char = '▏'
+let g:indentLine_color_term = 236
+"let g:indentLine_fileTypeExclude = ['markdown', 'text', 'json']
+let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python']
+
 
 " vim-air-line
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

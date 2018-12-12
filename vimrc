@@ -159,6 +159,19 @@ nmap z9 :set foldlevel=9<CR>
 "autocmd BufEnter * silent! lcd %:p:h
 
 
+" vim-indent-guides
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'text', 'markdown']
+ ""
+let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2d2d2d ctermbg=white
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=5
+hi IndentGuidesOdd  ctermbg=none
+hi IndentGuidesEven ctermbg=236
+                                              
+
+
 "vim-markdown-preview
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let vim_markdown_preview_github = 1
@@ -434,6 +447,9 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " Stop syntastic from checking java files
 let g:loaded_syntastic_java_javac_checker = 1
+" Make syntastic use shellcheck with the -x arg to follow references to other
+" scripts
+"let g:syntastic_sh_shellcheck_args = "-x"
 
 
 "vim-markdown stuff
@@ -596,7 +612,7 @@ let g:expand_region_text_objects_xsd = {
       \ 'it' :1,
       \ 'at' :1,
       \ }
-                                                                                                                                                                                  
+
 let g:expand_region_text_objects_xml = {
       \ 'iw' :0,
       \ 'iW' :0,

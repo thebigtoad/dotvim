@@ -11,14 +11,16 @@ set -e
 VIM_DIR=~/.vim
 VIM_BUNDLE_DIR=$VIM_DIR/bundle
 VIM_AUTOLOAD_DIR=$VIM_DIR/autoload
-VIM_PATHOGEN_DIR=$VIM_BUNDLE_DIR/vim-pathogen
 
 #Shell Colour constants for use in 'echo -e'
-RED='\033[1;31m'
-GREEN='\033[1;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[1;34m'
-NC='\033[0m' # No Color
+# shellcheck disable=SC2034
+{
+    RED='\033[1;31m'
+    GREEN='\033[1;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[1;34m'
+    NC='\033[0m' # No Color
+}
 
 addPlugin(){
     if [ $# -ne 2 ]; then
@@ -30,14 +32,14 @@ addPlugin(){
     gitUrl=$2
     pluginDir=$VIM_BUNDLE_DIR/$dirName
 
-    if [ -d $pluginDir ]; then
-        cd $pluginDir
+    if [ -d "${pluginDir}" ]; then
+        cd "${pluginDir}"
         echo -e "${GREEN}Updating ${BLUE}${dirName}${NC}"
         git pull
     else
         cd $VIM_BUNDLE_DIR
         echo -e "${GREEN}Cloning ${BLUE}${dirName}${NC}"
-        git clone --depth 1 $gitUrl
+        git clone --depth 1 "${gitUrl}"
     fi
     echo
 }
@@ -51,7 +53,7 @@ addColour() {
     colorsDir=$VIM_DIR/colors/
     latestDir=$colorsDir/latest/
     mkdir -p $latestDir
-    wget --directory-prefix=$latestDir $gitUrl
+    wget --directory-prefix=$latestDir "${gitUrl}"
     if [ $? -ne 0 ]; then
         echo -e "${RED}Something went wrong fetching ${BLUE}${gitUrl}${NC} into ${BLUE}${colorsDir}${NC}"
         exit 1

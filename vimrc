@@ -61,6 +61,8 @@ set smartindent
 " No smart indenting for python scripts
 autocmd FileType python setlocal nosmartindent
 
+autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
+
 " Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
 autocmd BufRead,BufNewFile *.template set filetype=text
 
@@ -98,6 +100,11 @@ set showcmd
 " Reduce delay waiting for a mapping/key code to complete
 set timeoutlen=500
 set ttimeoutlen=50
+
+" Enable checking for a mode line in a file to set the indent specifically for
+" a file
+set modeline
+set modelines=5
 
 " Tab completion in command mode like zsh
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

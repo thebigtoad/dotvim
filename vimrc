@@ -44,15 +44,47 @@ if has('clipboard')
 endif
 
 
-" set up tab spacing
+" Global settings
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-set tabstop=8
+set title
+set nocompatible
+" Live life on the edge - don't create swap files
+set noswapfile
+" keep 3 lines of context when scrolling
+set scrolloff=3
+set laststatus=2
+set t_Co=256
+set showmode
+set showcmd
+" Reduce delay waiting for a mapping/key code to complete
+set timeoutlen=500
+set ttimeoutlen=50
+
+" tab/indent settings
+set tabstop=2
 set softtabstop=0
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
+
+" searching
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Enable checking for a mode line in a file to set the indent specifically for
+" a file
+set modeline
+set modelines=5
+
+" Tab completion in command mode like zsh
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore=.git,*.swp,*/tmp/*
+
 
 
 " Bespoke filetype handling
@@ -61,7 +93,13 @@ set smartindent
 " No smart indenting for python scripts
 autocmd FileType python setlocal nosmartindent
 
-autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
+" files to use an indent of 4 with
+autocmd FileType groovy,python,java setlocal softtabstop=4 shiftwidth=4
+
+" Add vertical column at the 8st char
+autocmd FileType sh,bash,python,javascript setlocal colorcolumn=81
+" Set the colour of the column
+highlight ColorColumn ctermbg=236 guibg=lightgrey
 
 " Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
 autocmd BufRead,BufNewFile *.template set filetype=text
@@ -76,42 +114,9 @@ autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<
 autocmd BufRead,BufNewFile .aliases set filetype=sh
 
 
-
 " Insert a newly generated UUID at the cursor position
 command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
 
-" searching
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-
-set title
-set nocompatible
-
-" keep 3 lines of context when scrolling
-set scrolloff=3
-
-set laststatus=2
-set t_Co=256
-set showmode
-set showcmd
-" Reduce delay waiting for a mapping/key code to complete
-set timeoutlen=500
-set ttimeoutlen=50
-
-" Enable checking for a mode line in a file to set the indent specifically for
-" a file
-set modeline
-set modelines=5
-
-" Tab completion in command mode like zsh
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-set wildmenu
-"set wildmode=full
-set wildmode=list:longest,list:full
-set wildignore=.git,*.swp,*/tmp/*
 
 " Markdown specific settings
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,11 +125,18 @@ set wildignore=.git,*.swp,*/tmp/*
 autocmd Filetype markdown setlocal linebreak
 
 " Specify languages to ssyntax highlight in markdown code blocks
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json', 'html', 'python', 'bash=sh', 'java']
+let g:markdown_fenced_languages = [
+    \ 'css', 
+    \ 'javascript', 
+    \ 'js=javascript', 
+    \ 'json=javascript', 
+    \ 'xml', 
+    \ 'json', 
+    \ 'html', 
+    \ 'python', 
+    \ 'bash=sh', 
+    \ 'java']
 
-
-" Live life on the edge - don't create swap files
-set noswapfile
 
 if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
@@ -689,3 +701,5 @@ if has('nvim')
     :tnoremap <C-k> <C-\><C-n><C-w>k
     :tnoremap <C-l> <C-\><C-n><C-w>l
 endif
+
+" vim:sw=4:ts=4:et:

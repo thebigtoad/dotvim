@@ -85,6 +85,7 @@ addPlugin "fzf"                             "https://github.com/junegunn/fzf.git
 addPlugin "fzf.vim"                         "https://github.com/junegunn/fzf.vim.git" #FuzzyFinder vim plugin
 addPlugin "groovyindent-unix"               "https://github.com/vim-scripts/groovyindent-unix.git" #groovy indenting
 addPlugin "gv.vim"                          "https://github.com/junegunn/gv.vim.git"
+addPlugin "linediff.vim"                    "https://github.com/AndrewRadev/linediff.vim.git"
 addPlugin "nerdcommenter"                   "https://github.com/scrooloose/nerdcommenter.git"
 addPlugin "nerdtree"                        "https://github.com/scrooloose/nerdtree.git"
 addPlugin "syntastic"                       "https://github.com/scrooloose/syntastic.git"
@@ -99,7 +100,7 @@ addPlugin "vim-easymotion"                  "https://github.com/easymotion/vim-e
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 addPlugin "vim-fugitive"                    "https://github.com/tpope/vim-fugitive.git"
 addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-gitgutter.git"
-addPlugin "vim-indent-line"                 "https://github.com/Yggdroot/indentLine"
+addPlugin "indentLine"                      "https://github.com/Yggdroot/indentLine"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
 addPlugin "vim-markdown"                    "https://github.com/plasticboy/vim-markdown.git"

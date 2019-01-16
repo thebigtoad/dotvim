@@ -194,10 +194,9 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " Put a buffer list at the top
 let g:airline#extensions#tabline#enabled = 0
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#fnamecollapse = 1
-"let g:airline#extensions#tabline#fnametruncate = 20
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+"let g:airline_inactive_collapse=1
+"let g:airline_inactive_alt_sep=1 
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -208,8 +207,9 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline_symbols.space = "\ua0"
 
-" Prefix the filename (%t) with the current working dir, max 30chars
-let g:airline_section_c = '%-0.30{getcwd()}/%t'
+" Customise the sections
+let g:airline_section_c = '%f'
+let g:airline_section_z = '%3p%% %l:%c'
 
 " Unicode symbols
 let g:airline_left_sep = '»'

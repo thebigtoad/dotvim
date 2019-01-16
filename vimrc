@@ -207,23 +207,20 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline_symbols.space = "\ua0"
 
-" Customise the sections
-let g:airline_section_c = '%f'
-let g:airline_section_z = '%3p%% %l:%c'
+" Customise the vim-airline sections
+"+-----------------------------------------------------------------------------+
+"| A | B |                     C                            X | Y | Z |  [...] |
+"+-----------------------------------------------------------------------------+
 
-" Unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" remove separators for empty sections
+"let g:airline_skip_empty_sections = 1
+
+" Remove the vim mode from section A
+let g:airline_section_a = ''
+" Use file path relative to current dir (normally repo root)
+let g:airline_section_c = '%f'
+" <Position percentage> <line no>:<col no>
+let g:airline_section_z = '%3p%% %l:%c'
 
 " Airline symbols
 let g:airline_left_sep = ''
@@ -231,8 +228,10 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.whitespace = 'Ξ'
 
 
 " Assorted key bindings

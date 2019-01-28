@@ -182,7 +182,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
 "let g:indentLine_fileTypeExclude = ['markdown', 'text', 'json']
-let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python']
+let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python', 'xml', 'xslt', 'xsd']
 
 
 " vim-air-line

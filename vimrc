@@ -349,13 +349,25 @@ noremap <leader>gl ::GitGutterLineHighlightsToggle<CR>
 
 let g:gitgutter_enabled = 1
 
+" This block is a bit of a hack to fix colour problems with
+" GitGutter signs as they were showing wih vimdiff background
+" colours
+hi myGitGutterAdd          ctermbg=none ctermfg=green
+hi myGitGutterChange       ctermbg=none ctermfg=brown
+hi myGitGutterDelete       ctermbg=none ctermfg=red
+hi myGitGutterChangeDelete ctermbg=none ctermfg=brown
+hi link GitGutterAdd          myGitGutterAdd
+hi link GitGutterChange       myGitGutterChange
+hi link GitGutterDelete       myGitGutterDelete
+hi link GitGutterChangeDelete myGitGutterChangeDelete
+
 " Change the gutter symbols
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = ''
-"let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed = '━'
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = '⛔'
+
 
 " line numbering
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

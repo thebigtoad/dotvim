@@ -464,6 +464,9 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " Stop syntastic from checking java files
 let g:loaded_syntastic_java_javac_checker = 1
+" run shellcheck with the -x arg to make it follow sourced files
+" needs a more recent version of shellcheck
+" let g:syntastic_sh_shellcheck_args = "-x"
 
 
 "vim-markdown stuff

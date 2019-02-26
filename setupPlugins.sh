@@ -117,6 +117,7 @@ addPlugin "vim-textobj-brace"               "https://github.com/Julian/vim-texto
 addPlugin "vim-textobj-css"                 "https://github.com/jasonlong/vim-textobj-css.git"
 addPlugin "vim-textobj-function"            "https://github.com/kana/vim-textobj-function.git"
 addPlugin "vim-textobj-line"                "https://github.com/kana/vim-textobj-line.git"
+addPlugin "vim-textobj-parameter"           "https://github.com/sgur/vim-textobj-parameter.git"
 addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-textobj-quotes.git"
 addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj-user.git"
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"

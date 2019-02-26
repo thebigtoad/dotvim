@@ -79,7 +79,6 @@ setup_pathogen
 #Install/update the following plugins, some require additional binaries to work
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git" # requires silversearcher-ag
 addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
-addPlugin "ctrlp.vim"                       "https://github.com/kien/ctrlp.vim.git"
 addPlugin "fonts"                           "https://github.com/powerline/fonts.git"
 addPlugin "fzf"                             "https://github.com/junegunn/fzf.git" #FuzzyFinder binaries
 addPlugin "fzf.vim"                         "https://github.com/junegunn/fzf.vim.git" #FuzzyFinder vim plugin

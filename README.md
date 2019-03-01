@@ -46,7 +46,9 @@ To see all the plugins in use (or to add more) look in [setupPlugins.sh](https:/
 
 ### Navigation
 * Jump to last character = `g_`
+* Jump to last edit position = `g;`
 * Jump backwards/forwards in jump list = `<ctrl>o` / `<ctrl>i`
+* Scroll down/up smoothly = `ctrl>f` /  `ctrl>b`
 
 ### Folds
 * Turn on syntax based folding = `:setlocal foldmethod=syntax`

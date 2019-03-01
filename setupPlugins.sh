@@ -78,6 +78,7 @@ setup_pathogen
 
 #Install/update the following plugins, some require additional binaries to work
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git" # requires silversearcher-ag
+addPlugin "comfortable-motion.vim"          "https://github.com/yuttie/comfortable-motion.vim.git"
 addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
 addPlugin "fonts"                           "https://github.com/powerline/fonts.git"
 addPlugin "fzf"                             "https://github.com/junegunn/fzf.git" #FuzzyFinder binaries

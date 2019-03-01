@@ -48,8 +48,11 @@ endif
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set title
 set nocompatible
-" Live life on the edge - don't create swap files
-set noswapfile
+" use /tmp for vim swap/undo/backups
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
 " keep 3 lines of context when scrolling
 set scrolloff=3
 set laststatus=2

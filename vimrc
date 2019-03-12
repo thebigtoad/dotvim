@@ -619,6 +619,10 @@ endif
 " clear the black list so we also get completion, e.g. in markdown
 let g:ycm_filetype_blacklist = {}
 
+" make YCM compatible with UltiSnips, and consistent with vim
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
 
 " vim-expand-region stuff                                                                                                                                                         
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                      

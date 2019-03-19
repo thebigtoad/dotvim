@@ -49,6 +49,7 @@ To see all the plugins in use (or to add more) look in [setupPlugins.sh](https:/
 * Jump to last edit position = `g;`
 * Jump backwards/forwards in jump list = `<ctrl>o` / `<ctrl>i`
 * Scroll down/up smoothly = `ctrl>f` /  `ctrl>b`
+* Search for uses of word under cursor in repo (ack.vim) = `<leader>A`
 
 ### Folds
 * Turn on syntax based folding = `:setlocal foldmethod=syntax`
@@ -56,6 +57,9 @@ To see all the plugins in use (or to add more) look in [setupPlugins.sh](https:/
 * Close fold under cursor = `zc`
 * Toggle fold under cursor = `za`
 * Open all folds under cursor = `zO`
+* Close all fold under cursor = `zC`
+* Open all folds = `zR`
+* Close all fold = `zM`
 * Set fold level 0-9 = `z0` - `z9`
 
 ### Windows

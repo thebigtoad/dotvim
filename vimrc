@@ -585,7 +585,6 @@ endif
 
 "fugitive (git) stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-nmap <leader>g :Gstatus<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gd :Gdiff<CR>

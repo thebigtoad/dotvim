@@ -295,8 +295,12 @@ vnoremap > >gv
 " Get rid of highlighting
 noremap <leader>h :noh<CR>
 
-" Insert the current git branch name, stripping the text after the issue                                                                                                                             
-" number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"                                                                                                                                
+" Quick global replace using * and #
+nnoremap <leader>R :%s///g<left><left>
+nnoremap <leader>RC :%s///gc<left><left>
+
+" Insert the current git branch name, stripping the text after the issue
+" number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"
 noremap <leader>i :-1read ![[ "$(pwd)" =~ .*/\.git ]] && cd ..; git rev-parse --abbrev-ref HEAD \| sed -E "s/^(gh-[0-9]+).*$/\1 /"<CR>A
 
 " Hitting jk will jump out of insert mode
@@ -330,7 +334,7 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 " Horizontal split
 noremap <leader>s :sp<CR><C-w><C-w>
 
-" Insert shell colour constants for use in 'echo -e'                                                                                                                                                  
+" Insert shell colour constants for use in 'echo -e'
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 noremap <leader>colours :set paste<CR>i#Colour constants for use in echo -e statements<CR>RED='\033[1;31m'<CR>GREEN='\033[1;32m'<CR>YELLOW='\033[1;33m'<CR>BLUE='\033[1;34m'<CR>NC='\033[0m' # No Colour<CR><ESC>:set nopaste<CR>
 noremap <leader>blu i${BLUE}<ESC>

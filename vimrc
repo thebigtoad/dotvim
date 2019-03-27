@@ -462,18 +462,18 @@ nnoremap <leader>' :NERDTreeToggle<cr>
 
 "syntastic settings
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-" Stop syntastic from checking java files
-let g:loaded_syntastic_java_javac_checker = 1
-" run shellcheck with the -x arg to make it follow sourced files
-" needs a more recent version of shellcheck
-" let g:syntastic_sh_shellcheck_args = "-x"
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 1
+"" Stop syntastic from checking java files
+"let g:loaded_syntastic_java_javac_checker = 1
+"" run shellcheck with the -x arg to make it follow sourced files
+"" needs a more recent version of shellcheck
+"" let g:syntastic_sh_shellcheck_args = "-x"
 
 
 "vim-markdown stuff
@@ -770,5 +770,71 @@ endif
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Tsuquyomi (typescript completion)
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:tsuquyomi_completion_detail = 0
+
+" vim-prettier
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.vue,*.html PrettierAsync
+
+"" max line length that prettier will wrap on
+"" Prettier default: 80
+"let g:prettier#config#print_width = 80
+"
+"" number of spaces per indentation level
+"" Prettier default: 2
+"let g:prettier#config#tab_width = 2
+"
+"" use tabs over spaces
+"" Prettier default: false
+"let g:prettier#config#use_tabs = 'false'
+"
+"" print semicolons
+"" Prettier default: true
+"let g:prettier#config#semi = 'true'
+"
+"" single quotes over double quotes
+"" Prettier default: false
+""let g:prettier#config#single_quote = 'true'
+"let g:prettier#config#single_quote = 'false'
+"
+"" print spaces between brackets
+"" Prettier default: true
+""let g:prettier#config#bracket_spacing = 'false'
+"let g:prettier#config#bracket_spacing = 'true'
+"
+"" put > on the last line instead of new line
+"" Prettier default: false
+""let g:prettier#config#jsx_bracket_same_line = 'true'
+"let g:prettier#config#jsx_bracket_same_line = 'false'
+"
+"" avoid|always
+"" Prettier default: avoid
+""let g:prettier#config#arrow_parens = 'always'
+"let g:prettier#config#arrow_parens = 'avoid'
+"
+"" none|es5|all
+"" Prettier default: none
+""let g:prettier#config#trailing_comma = 'all'
+"let g:prettier#config#trailing_comma = 'none'
+"
+"" flow|babylon|typescript|css|less|scss|json|graphql|markdown
+"" Prettier default: babylon
+""let g:prettier#config#parser = 'flow'
+"let g:prettier#config#parser = 'babylon'
+"
+"" cli-override|file-override|prefer-file
+"let g:prettier#config#config_precedence = 'prefer-file'
+"
+"" always|never|preserve
+"let g:prettier#config#prose_wrap = 'preserve'
+"
+"" css|strict|ignore
+"let g:prettier#config#html_whitespace_sensitivity = 'css'
 
 " vim:sw=4:ts=4:et:

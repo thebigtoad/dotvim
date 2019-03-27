@@ -77,7 +77,12 @@ setup_pathogen() {
 setup_pathogen
 
 #Install/update the following plugins, some require additional binaries to work
+#addPlugin "syntastic"                       "https://github.com/scrooloose/syntastic.git"
+#addPlugin "vim-easymotion"                  "https://github.com/easymotion/vim-easymotion.git"
+#addPlugin "vim-scala"                       "https://github.com/derekwyatt/vim-scala.git"
+#addPlugin "vim-twiggy"                      "https://github.com/sodapopcan/vim-twiggy.git"
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git" # requires silversearcher-ag
+addPlugin "ale"                             "https://github.com/w0rp/ale.git"
 addPlugin "comfortable-motion.vim"          "https://github.com/yuttie/comfortable-motion.vim.git"
 addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
 addPlugin "fonts"                           "https://github.com/powerline/fonts.git"
@@ -85,36 +90,37 @@ addPlugin "fzf"                             "https://github.com/junegunn/fzf.git
 addPlugin "fzf.vim"                         "https://github.com/junegunn/fzf.vim.git" #FuzzyFinder vim plugin
 addPlugin "groovyindent-unix"               "https://github.com/vim-scripts/groovyindent-unix.git" #groovy indenting
 addPlugin "gv.vim"                          "https://github.com/junegunn/gv.vim.git"
-addPlugin "indentLine"                      "https://github.com/Yggdroot/indentLine"
-addPlugin "linediff.vim"                    "https://github.com/AndrewRadev/linediff.vim.git"
-addPlugin "nerdcommenter"                   "https://github.com/scrooloose/nerdcommenter.git"
+addPlugin "indentLine"                      "https://github.com/Yggdroot/indentLine" # Adds vertical indennt lines
+addPlugin "linediff.vim"                    "https://github.com/AndrewRadev/linediff.vim.git" # Diff lines or blocks of code
+addPlugin "nerdcommenter"                   "https://github.com/scrooloose/nerdcommenter.git" # Comment out code
 addPlugin "nerdtree"                        "https://github.com/scrooloose/nerdtree.git"
 addPlugin "supertab"                        "https://github.com/ervandew/supertab.git"
-addPlugin "syntastic"                       "https://github.com/scrooloose/syntastic.git"
 addPlugin "tabular"                         "https://github.com/godlygeek/tabular.git"
+addPlugin "tsuquyomi"                       "https://github.com/Quramy/tsuquyomi.git" # typescript completion
+addPlugin "typescript-vim"                  "https://github.com/leafgarland/typescript-vim.git"
 addPlugin "ultisnips"                       "https://github.com/SirVer/ultisnips.git"
 addPlugin "vim-abolish"                     "https://github.com/tpope/vim-abolish.git"
 addPlugin "vim-airline"                     "https://github.com/bling/vim-airline.git"
 addPlugin "vim-airline-themes"              "https://github.com/vim-airline/vim-airline-themes.git"
 addPlugin "vim-bracketed-paste"             "https://github.com/ConradIrwin/vim-bracketed-paste.git"
-addPlugin "vim-bufkill"                     "https://github.com/qpkorr/vim-bufkill" #delete buffers without closing panes
+addPlugin "vim-bufkill"                     "https://github.com/qpkorr/vim-bufkill" # delete buffers without closing panes
 addPlugin "vim-easy-align"                  "https://github.com/junegunn/vim-easy-align"
-addPlugin "vim-easymotion"                  "https://github.com/easymotion/vim-easymotion.git"
 addPlugin "vim-expand-region"               "https://github.com/terryma/vim-expand-region.git"
 addPlugin "vim-fugitive"                    "https://github.com/tpope/vim-fugitive.git"
 addPlugin "vim-gitgutter"                   "https://github.com/airblade/vim-gitgutter.git"
 addPlugin "vim-javascript"                  "https://github.com/pangloss/vim-javascript.git"
 addPlugin "vim-json"                        "https://github.com/elzr/vim-json.git"
+addPlugin "vim-jsx-typescript"              "https://github.com/peitalin/vim-jsx-typescript.git" # Support for inline tsx/jsx
 addPlugin "vim-markdown"                    "https://github.com/plasticboy/vim-markdown.git"
 addPlugin "vim-markdown-folding"            "https://github.com/nelstrom/vim-markdown-folding.git"
 addPlugin "vim-markdown-preview"            "https://github.com/JamshedVesuna/vim-markdown-preview.git" #requires python, grip, xdotool and a browser to function
 addPlugin "vim-markdown-toc"                "https://github.com/mzlogin/vim-markdown-toc.git"
-addPlugin "vim-move"                        "https://github.com/matze/vim-move.git"
+addPlugin "vim-move"                        "https://github.com/matze/vim-move.git" # Move lines/blocks up/down
+addPlugin "vim-prettier"                    "https://github.com/prettier/vim-prettier.git"
 addPlugin "vim-repeat"                      "https://github.com/tpope/vim-repeat.git"
-addPlugin "vim-rooter"                      "https://github.com/airblade/vim-rooter.git"
-addPlugin "vim-scala"                       "https://github.com/derekwyatt/vim-scala.git"
+addPlugin "vim-rooter"                      "https://github.com/airblade/vim-rooter.git" # Change dir to root of repo
 addPlugin "vim-sneak"                       "https://github.com/justinmk/vim-sneak.git"
-addPlugin "vim-snippets"                    "https://github.com/honza/vim-snippets.git"
+addPlugin "vim-snippets"                    "https://github.com/honza/vim-snippets.git" # Pre-defined snippets for Ultisnips
 addPlugin "vim-surround"                    "https://github.com/tpope/vim-surround.git"
 addPlugin "vim-textobj-brace"               "https://github.com/Julian/vim-textobj-brace.git"
 addPlugin "vim-textobj-css"                 "https://github.com/jasonlong/vim-textobj-css.git"
@@ -125,15 +131,14 @@ addPlugin "vim-textobj-quotes"              "https://github.com/beloglazov/vim-t
 addPlugin "vim-textobj-user"                "https://github.com/kana/vim-textobj-user.git"
 addPlugin "vim-textobj-variable-segment"    "https://github.com/Julian/vim-textobj-variable-segment.git"
 addPlugin "vim-tmux-navigator"              "https://github.com/christoomey/vim-tmux-navigator.git"
-addPlugin "vim-togglelist"                  "https://github.com/milkypostman/vim-togglelist.git"
-addPlugin "vim-twiggy"                      "https://github.com/sodapopcan/vim-twiggy.git"
+addPlugin "vim-togglelist"                  "https://github.com/milkypostman/vim-togglelist.git" # toggle location/quickfix lists
 addPlugin "vim-unimpaired"                  "https://github.com/tpope/vim-unimpaired.git"
 addPlugin "vim-yaml"                        "https://github.com/stephpy/vim-yaml.git"
 #YouCompleteMe is heavyweight and needs node/npm and the following
 #sudo apt-get install -y build-essential cmake python-dev python3-dev
 #cd ~/.vim/bundle/youcompleteme
 #git submodule update --init --recursive
-#./install.py --tern-completer
+#./install.py --ts-completer
 addPlugin "youcompleteme"                   "https://github.com/valloric/youcompleteme.git"
 
 echo -e "${GREEN}Adding colour schemes${NC}"

@@ -562,6 +562,7 @@ nmap <leader>gw :Files! ~/git_work<CR>
 " Use FZF to change current directory to one of the git repos in git_work
 nmap <leader>d :Cd ~/git_work<CR>
 
+
 "ack.vim
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "Open a new tab and search for something
@@ -626,10 +627,34 @@ let g:ycm_filetype_blacklist = {}
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
+"let g:ycm_key_list_select_completion = ['<C-j>']
+"let g:ycm_key_list_previous_completion = ['<C-k>']
 
-" vim-expand-region stuff                                                                                                                                                         
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                      
-let g:expand_region_text_objects_xsd = {                                                                                                                                          
+
+" Ultisnips
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger = "<C-l>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:BASH_Ctrl_j = 'off'
+let g:C_Ctrl_j = 'off'
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+" vim-expand-region stuff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:expand_region_text_objects_xsd = {
       \ 'iw' :0,
       \ 'iW' :0,
       \ 'iq' :0,
@@ -639,7 +664,7 @@ let g:expand_region_text_objects_xsd = {
       \ 'it' :1,
       \ 'at' :1,
       \ }
-                                                                                                                                                                                  
+
 let g:expand_region_text_objects_xml = {
       \ 'iw' :0,
       \ 'iW' :0,
@@ -668,6 +693,7 @@ let g:expand_region_text_objects_markdown = {
       \ 'ap' :0,
       \ }
 
+
 " vim-tmux-navigator stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -691,6 +717,7 @@ nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 let g:rooter_silent_chdir = 1
 
+
 " vim-easy-align stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -710,6 +737,7 @@ let g:comfortable_motion_no_default_key_mappings = 1
 let g:comfortable_motion_impulse_multiplier = 1.5  " Feel free to increase/decrease this value.
 nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
 nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+
 
 "neovim specific stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -735,5 +763,12 @@ if has('nvim')
     :tnoremap <C-k> <C-\><C-n><C-w>k
     :tnoremap <C-l> <C-\><C-n><C-w>l
 endif
+
+
+
+" Supertab
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " vim:sw=4:ts=4:et:

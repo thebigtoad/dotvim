@@ -296,8 +296,8 @@ vnoremap > >gv
 noremap <leader>h :noh<CR>
 
 " Quick global replace using * and #
-nnoremap <leader>R :%s///g<left><left>
-nnoremap <leader>RC :%s///gc<left><left>
+nnoremap <leader>rg :%s///g<left><left>
+nnoremap <leader>rc :%s///gc<left><left>
 
 " Insert the current git branch name, stripping the text after the issue
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"

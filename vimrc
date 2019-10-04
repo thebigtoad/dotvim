@@ -295,9 +295,11 @@ vnoremap > >gv
 " Get rid of highlighting
 noremap <leader>h :noh<CR>
 
-" Quick global replace using * and #
-nnoremap <leader>rg :%s///g<left><left>
-nnoremap <leader>rc :%s///gc<left><left>
+" Quick global replace of the word under the cursor
+nnoremap <leader>rg :%s/\<<C-r><C-w>\>//g<left><left>
+nnoremap <leader>rc :%s/\<<C-r><C-w>\>//gc<left><left><left>
+"nnoremap <leader>rg :%s///g<left><left>
+"nnoremap <leader>rc :%s///gc<left><left><left>
 
 " Insert the current git branch name, stripping the text after the issue
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"
@@ -634,7 +636,8 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " Ultisnips
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-space>"
 "let g:UltiSnipsExpandTrigger = "<C-l>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"

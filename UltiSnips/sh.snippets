@@ -1,3 +1,5 @@
+# Bash snippets
+
 snippet green "${GREEN}....${NC}"
 ${GREEN}${1:text}${NC}
 endsnippet
@@ -11,7 +13,7 @@ snippet quot "Surround with quoted ${...}"
 endsnippet
 
 snippet cecho "echo -e ${SOME_COLOUR}....${NC}" b
-echo -e "${${1:GREEN}}${2}${NC}"
+echo -e "${${1:GREEN}}$2${NC}"
 endsnippet
 
 snippet v "Quoted variable, ${...}"
@@ -28,6 +30,19 @@ local $1
 $1="$($2)"
 $0
 endsnippet
+
+snippet debugv "Debug value statement" b
+debug_value "$1" "${$1}"
+endsnippet
+
+snippet debug "Debug statement" b
+debug "$1"
+endsnippet
+
+snippet unused "Shellcheck SC2034 Unused variable" b
+# shellcheck disable=SC2034
+endsnippet
+	
 
 snippet cols "Add setup_echo_colours() {...}" b
 setup_echo_colours() {
@@ -59,3 +74,59 @@ snippet * "italics"
 *${1:${VISUAL}}*$0
 endsnippet
 
+snippet bash "Bash script skeleton" b
+#!/usr/bin/env bash
+
+set -e
+
+setup_echo_colours() {
+  # Exit the script on any error
+  set -e
+
+  # shellcheck disable=SC2034
+  if [ "${MONOCHROME}" = true ]; then
+    RED=''
+    GREEN=''
+    YELLOW=''
+    BLUE=''
+    BLUE2=''
+    DGREY=''
+    NC='' # No Colour
+  else 
+    RED='\033[1;31m'
+    GREEN='\033[1;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[1;34m'
+    BLUE2='\033[1;34m'
+    DGREY='\e[90m'
+    NC='\033[0m' # No Colour
+  fi
+}
+
+debug_value() {
+  local name="$1"; shift
+  local value="$1"; shift
+  
+  if [ "${IS_DEBUG}" = true ]; then
+    echo -e "${DGREY}DEBUG ${name}: ${value}${NC}"
+  fi
+}
+
+debug() {
+  local str="$1"; shift
+  
+  if [ "${IS_DEBUG}" = true ]; then
+    echo -e "${DGREY}DEBUG ${str}${NC}"
+  fi
+}
+
+main() {
+  IS_DEBUG=false
+
+  setup_echo_colours
+
+	$1
+}
+
+main "$@"
+endsnippet

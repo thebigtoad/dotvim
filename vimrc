@@ -244,7 +244,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 map <space> <leader>
 
 " Specific mapping for easymotion
-map <space><space> <leader><leader>
+"map <space><space> <leader><leader>
 
 " Maximise a window pane
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -555,6 +555,7 @@ nmap <leader>l :Lines!<CR>
 nmap <leader>p :ProjectFiles<CR>
 "open FZF in bUffer mode, 'b' is quite slow as there are other b... maps
 nmap <leader>u :Buffers!<CR>
+nmap <leader><leader> :Buffers!<CR>
 "open FZF in history mode (Most recently used)
 nmap <leader>m :History!<CR>
 "open FZF in files mode in the root of git_work
@@ -601,6 +602,16 @@ set diffopt+=vertical
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "enable smart streak mode
 let g:sneak#streak = 1 
+let g:sneak#label = 1
+
+
+"vim-easymotion
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Jump to lines above or below
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 
 
 " conoline.vim stuff
@@ -620,7 +631,7 @@ endif
 
 " YouCompleteMe stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" clear the black list so we also get completion, e.g. in markdown
+"s clear the black list so we also get completion, e.g. in markdown
 let g:ycm_filetype_blacklist = {}
 
 " make YCM compatible with UltiSnips, and consistent with vim

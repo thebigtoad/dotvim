@@ -244,7 +244,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 map <space> <leader>
 
 " Make <leader><leader> work
-map <space><space> <leader><leader>
+"map <space><space> <leader><leader>
 
 " Maximise a window pane
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -284,6 +284,18 @@ nnoremap J :call JoinSpaceless()<CR>
 " Buffer cycling
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
 " Y yanks to end of line
 nmap Y y$
@@ -553,9 +565,11 @@ nmap <leader>o :WordOccurences<CR>
 nmap <leader>l :Lines!<CR>
 "open FZF in files mode, rooted at the current git root
 nmap <leader>p :ProjectFiles<CR>
-"open FZF in bUffer mode, 'b' is quite slow as there are other b... maps
-nmap <leader>u :Buffers!<CR>
-nmap <leader><leader> :Buffers!<CR>
+"open FZF in bUffer mode, <leader><leader> is a bit flaky so use
+"<space><space>
+nmap <space><space> :Buffers!<CR>
+" Used to use this mapping for buffers so make it no-op to stop use.
+nmap <leader>u <Nop>
 "open FZF in history mode (Most recently used)
 nmap <leader>m :History!<CR>
 "open FZF in files mode in the root of git_work
@@ -641,6 +655,12 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 "let g:ycm_key_list_select_completion = ['<C-j>']
 "let g:ycm_key_list_previous_completion = ['<C-k>']
 
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
+
+" SuperTab
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Ultisnips
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

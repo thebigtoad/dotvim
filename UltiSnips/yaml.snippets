@@ -1,0 +1,21 @@
+# Ansible snippets
+
+snippet play "Ansible play" b
+- hosts: ${1:hostgroup}
+  # become: yes
+  tasks:
+		- ${0}
+endsnippet
+
+snippet improle "Import Ansible role" b
+    - import_role:
+        name: $0
+endsnippet
+
+snippet moustache "Ansible moustache {{ x }}"
+{{ $1 }}$0
+endsnippet
+
+snippet qmoustache "Ansible quoted moustache {{ x }}"
+"{{ $1 }}"$0
+endsnippet

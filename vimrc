@@ -243,8 +243,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Use space as the leader                                                                                                                                                          
 map <space> <leader>
 
-" Specific mapping for easymotion
-"map <space><space> <leader><leader>
+" Make <leader><leader> work
+map <space><space> <leader><leader>
 
 " Maximise a window pane
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>

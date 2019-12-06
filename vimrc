@@ -185,7 +185,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
 "let g:indentLine_fileTypeExclude = ['markdown', 'text', 'json']
-let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python', 'xml', 'xslt', 'xsd']
+let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python', 'xml', 'xslt', 'xsd', 'ruby', 'yaml']
 
 
 " vim-air-line
@@ -646,7 +646,7 @@ endif
 " YouCompleteMe stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "s clear the black list so we also get completion, e.g. in markdown
-let g:ycm_filetype_blacklist = {}
+"let g:ycm_filetype_blacklist = {}
 
 " make YCM compatible with UltiSnips, and consistent with vim
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']

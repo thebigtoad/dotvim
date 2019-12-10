@@ -104,8 +104,8 @@ setup_echo_colours() {
 }
 
 debug_value() {
-  local name="$1"; shift
-  local value="$1"; shift
+  local name="\$1"; shift
+  local value="\$1"; shift
   
   if [ "${IS_DEBUG}" = true ]; then
     echo -e "${DGREY}DEBUG ${name}: ${value}${NC}"
@@ -113,7 +113,7 @@ debug_value() {
 }
 
 debug() {
-  local str="$1"; shift
+  local str="\$1"; shift
   
   if [ "${IS_DEBUG}" = true ]; then
     echo -e "${DGREY}DEBUG ${str}${NC}"
@@ -125,7 +125,7 @@ main() {
 
   setup_echo_colours
 
-	$1
+	$0
 }
 
 main "$@"

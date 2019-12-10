@@ -1,10 +1,10 @@
 # Bash snippets
 
-snippet green "${GREEN}....${NC}"
-${GREEN}${1:text}${NC}
+snippet green "${GREEN}....${NC}" i
+${GREEN}${1:text}${NC}$0
 endsnippet
 
-snippet col "${GREEN}....${NC}"
+snippet col "${<ENTER COLOUR>}....${NC}" i
 ${$1}${VISUAL}${NC}$0
 endsnippet
 
@@ -16,7 +16,7 @@ snippet cecho "echo -e ${SOME_COLOUR}....${NC}" b
 echo -e "${${1:GREEN}}$2${NC}"
 endsnippet
 
-snippet qv "Quoted variable, ${...}"
+snippet qv "Quoted variable, ${...}" i
 "${$1}"$0
 endsnippet
 

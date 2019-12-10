@@ -35,13 +35,13 @@ addPlugin(){
     if [ -d "${pluginDir}" ]; then
         cd "${pluginDir}"
         echo -e "${GREEN}Updating ${BLUE}${dirName}${NC}"
-        git pull
+        git --no-pager diff --shortstat origin/master
+        git pull --quiet
     else
         cd $VIM_BUNDLE_DIR
         echo -e "${GREEN}Cloning ${BLUE}${dirName}${NC}"
-        git clone --depth 1 "${gitUrl}"
+        git clone --quiet --depth 1 "${gitUrl}"
     fi
-    echo
 }
 
 addColour() {
@@ -53,7 +53,7 @@ addColour() {
     colorsDir=$VIM_DIR/colors/
     latestDir=$colorsDir/latest/
     mkdir -p $latestDir
-    wget --directory-prefix=$latestDir "${gitUrl}"
+    wget --quiet --directory-prefix=$latestDir "${gitUrl}"
     if [ $? -ne 0 ]; then
         echo -e "${RED}Something went wrong fetching ${BLUE}${gitUrl}${NC} into ${BLUE}${colorsDir}${NC}"
         exit 1
@@ -67,7 +67,6 @@ setup_pathogen() {
     mkdir -p $VIM_BUNDLE_DIR
     mkdir -p $VIM_AUTOLOAD_DIR
     curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-    echo
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,5 +153,3 @@ if command -v fzf 1>/dev/null; then
 else
     echo -e "\n${RED}FZF is not installed, run 'install' in ${BLUE}~/.vim/bundle/fzf${NC}"
 fi
-echo
-

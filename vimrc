@@ -81,7 +81,7 @@ set hlsearch
 " Enable checking for a mode line in a file to set the indent specifically for
 " a file
 set modeline
-set modelines=5
+set modelines=3
 
 " Tab completion in command mode like zsh
 set wildmenu

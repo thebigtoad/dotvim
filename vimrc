@@ -88,6 +88,11 @@ set wildmenu
 set wildmode=list:longest,list:full
 set wildignore=.git,*.swp,*/tmp/*
 
+if has('linebreak')
+  set breakindent
+  let &showbreak = '↳ '
+  set cpo+=n
+end
 
 
 " Bespoke filetype handling

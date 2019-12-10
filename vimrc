@@ -126,26 +126,6 @@ autocmd BufRead,BufNewFile .aliases set filetype=sh
 command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
 
 
-" Markdown specific settings
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" Don't break lines on words in markdown
-autocmd Filetype markdown setlocal linebreak
-
-" Specify languages to ssyntax highlight in markdown code blocks
-let g:markdown_fenced_languages = [
-    \ 'css', 
-    \ 'javascript', 
-    \ 'js=javascript', 
-    \ 'json=javascript', 
-    \ 'xml', 
-    \ 'json', 
-    \ 'html', 
-    \ 'python', 
-    \ 'bash=sh', 
-    \ 'java']
-
-
 if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
 endif
@@ -189,9 +169,24 @@ let vim_markdown_preview_hotkey='<C-m>'
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
-"let g:indentLine_fileTypeExclude = ['markdown', 'text', 'json']
-let g:indentLine_fileType = ['java', 'javascript', 'sh', 'python', 'xml', 'xslt', 'xsd', 'ruby', 'yaml']
+let g:indentLine_fileType = [
+  \ 'java', 
+  \ 'javascript', 
+  \ 'json',
+  \ 'python', 
+  \ 'ruby', 
+  \ 'sh', 
+  \ 'vim',
+  \ 'xml', 
+  \ 'xsd', 
+  \ 'xslt', 
+  \ 'yaml'
+  \ ]
 
+" vim-json
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Stop vim-json concealing quotes
+let g:vim_json_syntax_conceal = 0
 
 " vim-air-line
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -498,7 +493,21 @@ let g:loaded_syntastic_java_javac_checker = 1
 let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_toc_autofit = 1
 let g:move_key_modifier = 'M'
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json']
+" Specify languages to ssyntax highlight in markdown code blocks
+let g:markdown_fenced_languages = [
+            \ 'css', 
+            \ 'javascript', 
+            \ 'js=javascript', 
+            \ 'json=javascript', 
+            \ 'xml', 
+            \ 'json', 
+            \ 'html', 
+            \ 'python', 
+            \ 'bash=sh', 
+            \ 'java']
+
+" Don't break lines on words in markdown
+autocmd Filetype markdown setlocal linebreak
 
 
 "vim-move

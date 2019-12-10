@@ -16,8 +16,8 @@ snippet cecho "echo -e ${SOME_COLOUR}....${NC}" b
 echo -e "${${1:GREEN}}$2${NC}"
 endsnippet
 
-snippet v "Quoted variable, ${...}"
-"${$1}"
+snippet qv "Quoted variable, ${...}"
+"${$1}"$0
 endsnippet
 
 snippet arg "local my_variable=$1; shift" b

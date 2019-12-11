@@ -1,7 +1,11 @@
 # Bash snippets
 
 snippet green "${GREEN}....${NC}" i
-${GREEN}${1:text}${NC}$0
+${GREEN}${1}${NC}$0
+endsnippet
+
+snippet blue "${BLUE}....${NC}" i
+${BLUE}${1}${NC}$0
 endsnippet
 
 snippet col "${<ENTER COLOUR>}....${NC}" i
@@ -25,10 +29,33 @@ local $1="\$1"; shift
 $0
 endsnippet
 
-snippet sub "local my_var; my_var=$(...)" b
+snippet subshellvalue "local my_var; my_var=$(...)" b
 local $1
 $1="$($2)"
 $0
+endsnippet
+
+snippet fun "Function (no args)" b
+${1:function_name}() {
+  $0
+}
+endsnippet
+
+snippet fun1 "Function (1 arg)" b
+${1:function_name}() {
+	local $2="\$1"; shift
+
+  $0
+}
+endsnippet
+
+snippet fun2 "Function (2 arg)" b
+${1:function_name}() {
+	local $2="\$1"; shift
+	local $3="\$1"; shift
+
+  $0
+}
 endsnippet
 
 snippet debugv "Debug value statement" b
@@ -39,8 +66,12 @@ snippet debug "Debug statement" b
 debug "$1"
 endsnippet
 
-snippet unused "Shellcheck SC2034 Unused variable" b
+snippet unused "Shellcheck disable SC2034 Unused variable" b
 # shellcheck disable=SC2034
+endsnippet
+
+snippet disable "Shellcheck disable SCXXXX" b
+# shellcheck disable=SC$0
 endsnippet
 	
 

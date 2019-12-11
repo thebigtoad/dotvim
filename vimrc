@@ -8,17 +8,12 @@ if has('syntax') && !exists('g:syntax_on')
     syntax enable
 endif
 
-
 set background=dark
-"molokai colour scheme
-"colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 
-"Tomorrow-Night colour scheme varients
-"colorscheme Tomorrow-Night
+" Tomorrow-Night colour scheme varients
 colorscheme Tomorrow-Night-Eighties
-"colorscheme Tomorrow-Night-Bright
 
 " Change the vertical split separator and clear its background so you just get
 " a nice thin line
@@ -63,7 +58,7 @@ set showcmd
 set timeoutlen=500
 set ttimeoutlen=50
 
-" tab/indent settings
+" default tab/indent settings
 set tabstop=2
 set softtabstop=0
 set expandtab
@@ -130,6 +125,7 @@ if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
+
 " Folding stuff
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -143,7 +139,7 @@ endif
 autocmd Filetype gitcommit setlocal nofoldenable
 autocmd Filetype markdown setlocal foldenable
 
-" Set fold level                                                                                                                                                                  
+" Set fold level 
 nmap z0 :set foldlevel=0<CR>
 nmap z1 :set foldlevel=1<CR>
 nmap z2 :set foldlevel=2<CR>
@@ -157,6 +153,18 @@ nmap z9 :set foldlevel=9<CR>
 
 " Set the current working directory to that of the active file
 "autocmd BufEnter * silent! lcd %:p:h
+
+
+"ale (Asynchronous Lint Engine)
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Stop ale from deselecting Ultisnips selections due to linting issues
+let g:ale_lint_on_text_changed = 'normal'
+" Stop ale from deselecting Ultisnips selections due to linting issues
+let g:ale_lint_on_insert_leave = 0
+" Don't lint on opening a file, as we may not intend to edit it.
+let g:ale_lint_on_enter = 0
+let g:ale_list_window_size = 5
+let g:ale_lint_delay = 2000
 
 
 "vim-markdown-preview
@@ -187,6 +195,7 @@ let g:indentLine_fileType = [
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Stop vim-json concealing quotes
 let g:vim_json_syntax_conceal = 0
+
 
 " vim-air-line
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,7 +318,7 @@ noremap <leader>h :noh<CR>
 
 " Quick global replace using * and #
 nnoremap <leader>rg :%s///g<left><left>
-nnoremap <leader>rc :%s///gc<left><left>
+nnoremap <leader>rc :%s///gc<left><left><left>
 
 " Insert the current git branch name, stripping the text after the issue
 " number, e.g. inserts "gh-123 " if the branch is "gh-123-some-issue"
@@ -345,6 +354,7 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 
 " Horizontal split
 noremap <leader>s :sp<CR><C-w><C-w>
+
 
 " Insert shell colour constants for use in 'echo -e'
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -674,24 +684,22 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " SuperTab
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Ultisnips
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsExpandTrigger = "<C-l>"
+"let g:UltiSnipsExpandTrigger="<C-l>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:BASH_Ctrl_j = 'off'
-let g:C_Ctrl_j = 'off'
-let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:BASH_Ctrl_j = 'off'
+"let g:C_Ctrl_j = 'off'
 "let g:UltiSnipsJumpForwardTrigger="<C-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -809,11 +817,4 @@ if has('nvim')
     :tnoremap <C-l> <C-\><C-n><C-w>l
 endif
 
-
-
-" Supertab
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" vim:sw=4:ts=4:et:
+" vim: set shiftwidth=4 tabstop=4 expandtab:

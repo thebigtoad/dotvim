@@ -1,5 +1,9 @@
 # Bash snippets
 
+snippet cmt "# A comment" b
+# $0
+endsnippet
+
 snippet green "${GREEN}....${NC}" i
 ${GREEN}${1}${NC}$0
 endsnippet
@@ -22,6 +26,10 @@ endsnippet
 
 snippet qv "Quoted variable, ${...}" i
 "${$1}"$0
+endsnippet
+
+snippet uv "unquoted variable, ${...}" i
+${$1}$0
 endsnippet
 
 snippet arg "local my_variable=$1; shift" b

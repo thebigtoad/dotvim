@@ -305,6 +305,11 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+" Open new tab
+noremap <leader>tn :tabnew<cr>
+" Close tab
+noremap <leader>tc :tabclose<cr>
+" Use default mappings gt and gT for tabnext/tabprevious
 
 " Y yanks to end of line
 nmap Y y$

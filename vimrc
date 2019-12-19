@@ -55,7 +55,10 @@ set t_Co=256
 set showmode
 set showcmd
 " Reduce delay waiting for a mapping/key code to complete
-set timeoutlen=500
+" e.g. if you have <leader>xy binding, then this is the time vim will wait for 
+" the y to be pressed after the x. Also due to insert mode jk binding, you
+" have to wait this time before you can type a k after a j.
+set timeoutlen=750
 set ttimeoutlen=50
 
 " default tab/indent settings

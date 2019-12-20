@@ -37,6 +37,15 @@ local $1="\$1"; shift
 $0
 endsnippet
 
+snippet checkargs "Check arguents count" b
+if [ \${#} -${1:ne} ${2:n} ]; then
+  echo -e "${RED}Error${NC}: Invalid arguments${NC}"
+	echo -e "Usage: \$0 $3"
+	exit 1
+fi
+$0
+endsnippet
+
 snippet subshellvalue "local my_var; my_var=$(...)" b
 local $1
 $1="$($2)"

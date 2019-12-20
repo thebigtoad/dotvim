@@ -59,12 +59,20 @@ snippet delete "Ansible dir/file is absent"
 $0
 endsnippet
 
-snippet umoustache "Ansible un-quoted moustache {{ x }}" i
+snippet umoustache "Ansible un-quoted moustache variable {{ x }}" i
 {{ $1 }}$0
 endsnippet
 
-snippet qmoustache "Ansible quoted moustache {{ x }}"
+snippet "(\w+)\.uv" "Ansible un-quoted moustache variable {{ x }} POSTFIX" r
+{{ `!p snip.rv = match.group(1)` $1}}$0
+endsnippet
+
+snippet qmoustache "Ansible quoted moustache variable {{ x }}"
 "{{ $1 }}"$0
+endsnippet
+
+snippet "(\w+)\.qv" "Ansible quoted moustache variable {{ x }} POSTFIX" r
+"{{ `!p snip.rv = match.group(1)` $1}}"$0
 endsnippet
 
 # vim: set tabstop=2 shiftwidth=2 expandtab:

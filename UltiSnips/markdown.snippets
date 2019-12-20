@@ -1,19 +1,47 @@
-
+# Markdown snippets
 snippet today "## YYYY MM DD" b
 ## `!v strftime("%Y %m %d")` - \`${1}\`
 $0
 endsnippet
 
-snippet vx "Quoted variable, ${...}"
-"${$1}"
-endsnippet
-
 snippet fence "```language.....```" b
 \`\`\`${1}
-$0
+$2
 \`\`\`
+$0
 endsnippet
 
 snippet ilc "In line code (`...`)"
-\`${1}\`$0
+\`${1}\` $0
+endsnippet
+
+snippet h1 "# Heading 1" b
+# ${1:Heading}
+
+$0
+endsnippet
+
+snippet h2 "# Heading 2" b
+## ${1:Heading}
+
+$0
+endsnippet
+
+snippet h3 "# Heading 3" b
+### ${1:Heading}
+
+$0
+endsnippet
+
+snippet h4 "# Heading 4" b
+#### ${1:Heading}
+
+$0
+endsnippet
+
+# CHANGELOG snippets
+
+snippet issue "Stroom CHANGELOG issue entry" b
+* Issue **#${1:nnn}** : ${2:Description}
+$0
 endsnippet

@@ -37,10 +37,26 @@ local $1="\$1"; shift
 $0
 endsnippet
 
-snippet checkargs "Check arguents count" b
+snippet chkargs "Check arguents count" b
 if [ \${#} -${1:ne} ${2:n} ]; then
   echo -e "${RED}Error${NC}: Invalid arguments${NC}"
 	echo -e "Usage: \$0 $3"
+	exit 1
+fi
+$0
+endsnippet
+
+snippet chkfile "Check file exists" b
+if [ ! -f "${1:file_path}" ]; then
+  echo -e "${RED}Error${NC}: File ${$1} does not exist${NC}"
+	exit 1
+fi
+$0
+endsnippet
+
+snippet chkdir "Check directory exists" b
+if [ ! -d "${1:dir_path}" ]; then
+  echo -e "${RED}Error${NC}: File ${$1} does not exist${NC}"
 	exit 1
 fi
 $0

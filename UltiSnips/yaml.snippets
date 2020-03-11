@@ -11,6 +11,7 @@ endsnippet
 snippet play "Ansible play" b
 - hosts: ${1:hostgroup}
   # become: yes
+  # become_user: "{{ another_user }}"
   tasks:
     - ${0}
 endsnippet

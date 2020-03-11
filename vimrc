@@ -488,6 +488,11 @@ vnoremap <silent> <expr> p <sid>Repl()
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let NERDTreeQuitOnOpen = 1
 let g:NERDTreeChDirMode = 1
+let NERDTreeShowHidden=1
+" see if there is a way to toggle nerdtree in the current pane.
+" May need some form of map of project root => nerd tree buffer to pick the
+" right one
+" https://github.com/scrooloose/nerdtree/issues/244
 nnoremap <leader>' :NERDTreeToggle<cr>
 
 

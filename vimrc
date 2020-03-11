@@ -21,7 +21,8 @@ set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
 
 if has('gui_running')
-    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
+    "set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline\ 9
+    set guifont=Meslo\ LG\ M\ for\ Powerline\ 9
 endif
 
 " change colour of brace matching highlight

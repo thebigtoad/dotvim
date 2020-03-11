@@ -23,6 +23,8 @@ hi VertSplit ctermbg=NONE guibg=NONE
 if has('gui_running')
     "set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline\ 9
     set guifont=Meslo\ LG\ M\ for\ Powerline\ 9
+    " Hacky way to make gvim open maximised
+    set lines=999 columns=999
 endif
 
 " change colour of brace matching highlight

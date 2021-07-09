@@ -1,4 +1,7 @@
-# Markdown snippets
+# ~~~~~~~~~~~~~~~~~~~~~~~~~
+# General markdown snippets
+# ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 snippet today "## YYYY MM DD" b
 ## `!v strftime("%Y %m %d")` - \`${1}\`
 $0
@@ -39,9 +42,41 @@ snippet h4 "# Heading 4" b
 $0
 endsnippet
 
+snippet h5 "# Heading 5" b
+##### ${1:Heading}
+
+$0
+endsnippet
+
+snippet chk "[ ] Checklist item" b
+[ ] $0
+endsnippet
+
+
+# ~~~~~~~~~~~~~~~~~~
 # CHANGELOG snippets
+# ~~~~~~~~~~~~~~~~~~
 
 snippet issue "Stroom CHANGELOG issue entry" b
 * Issue **#${1:nnn}** : ${2:Description}
+$0
+endsnippet
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Hugo Static Site Generator snippets
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+snippet front "Hugo markdown metadata front matter" b
+---
+title: "${1:Title}"
+linkTitle: "$1"
+#weight:
+date: `date "+%Y-%m-%d"`
+tags: $2
+description: >
+  $3
+---
+
 $0
 endsnippet

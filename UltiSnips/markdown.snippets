@@ -67,7 +67,7 @@ endsnippet
 # Hugo Static Site Generator snippets
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-snippet front "Hugo markdown metadata front matter" b
+snippet hfront "Hugo markdown metadata front matter" b
 ---
 title: "${1:Title}"
 linkTitle: "$1"
@@ -78,5 +78,57 @@ description: >
   $3
 ---
 
+$0
+endsnippet
+
+snippet htodo "stroom-docs todo block quote" b
+{{% todo %}}
+${1:text}
+{{% /todo %}}
+$0
+endsnippet
+
+snippet hnote "stroom-docs note block quote" b
+{{% note %}}
+${1:text}
+{{% /note %}}
+$0
+endsnippet
+
+snippet hwarn "stroom-docs warn block quote" b
+{{% warn %}}
+${1:text}
+{{% /warn %}}
+$0
+endsnippet
+
+snippet hpagewarn "stroom-docs page warning block" b
+{{% page-warning %}}
+${1:text}
+{{% /page-warning %}}
+$0
+endsnippet
+
+snippet hpageinfo "stroom-docs page info block" b
+{{% page-info %}}
+${1:text}
+{{% /page-info %}}
+$0
+endsnippet
+
+snippet himg "stroom-docs image" b
+{{< image "${1:filename.svg}" "${2:300x}" />}}
+$0
+endsnippet
+
+snippet hcapimg "stroom-docs image with caption" b
+{{< image "${1:filename.svg}" "${2:300x}" >}}
+${3}
+{{< /image }}
+$0
+endsnippet
+
+snippet hicon "stroom-docs stroom icon image"
+{{< stroom-icon "${1:filename.svg}" "${2:title}" >}}
 $0
 endsnippet

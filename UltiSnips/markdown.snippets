@@ -53,6 +53,11 @@ snippet chk "[ ] Checklist item" b
 endsnippet
 
 
+snippet _ "italics"
+_${1:${VISUAL}}_$0
+endsnippet
+
+
 # ~~~~~~~~~~~~~~~~~~
 # CHANGELOG snippets
 # ~~~~~~~~~~~~~~~~~~
@@ -130,5 +135,14 @@ endsnippet
 
 snippet hicon "stroom-docs stroom icon image"
 {{< stroom-icon "${1:filename.svg}" "${2:title}" >}}
+$0
+endsnippet
+=======
+# stroom-docs snippets
+
+snippet ver "stroom-docs version header" b
+> * Version Information: Created with Stroom v${1:7.0}  
+* Last Updated: `!v strftime("%d %b %Y")`  
+
 $0
 endsnippet

@@ -176,6 +176,9 @@ let g:ale_lint_delay = 2000
 "vim-markdown-preview
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let vim_markdown_preview_github = 1
+" show preview on hotkey and with images
+" doesn't seem to work
+"let vim_markdown_preview_toggle=1
 let vim_markdown_preview_hotkey='<C-m>'
 
 
@@ -184,6 +187,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
 let g:indentLine_fileType = [
+  \ 'groovy', 
   \ 'java', 
   \ 'javascript', 
   \ 'json',
@@ -832,5 +836,28 @@ if has('nvim')
     :tnoremap <C-k> <C-\><C-n><C-w>k
     :tnoremap <C-l> <C-\><C-n><C-w>l
 endif
+
+
+" plugin-less way of previewing markdown in vim but cant get it to work,
+" came from https://www.reddit.com/r/vim/comments/8asgjj/topnotch_vim_markdown_live_previews_with_no/
+"noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
+
+"function! OpenMarkdownPreview() abort
+  "if exists('s:markdown_job') && job_status(s:markdown_job) == 'run'
+    ":echom "stopping job"
+    "call job_stop(s:markdown_job)
+    "unlet s:markdown_job
+  "endif
+  "let s:markdown_job = job_start(['grip ', '.', shellescape(expand('%:p'))])
+  ":echom 'grip ' . shellescape(expand('%:p'))
+  ":echom job_status(s:markdown_job)
+  ":echom s:markdown_job
+
+  "if job_status(s:markdown_job) != 'run' | return | endif
+  ""if s:markdown_job_id <= 0 | return | endif
+  ":echom "opening url"
+  "call system('open http://localhost:6419')
+"endfunction
+
 
 " vim: set shiftwidth=4 tabstop=4 expandtab:

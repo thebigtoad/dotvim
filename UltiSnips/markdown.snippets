@@ -68,6 +68,18 @@ $0
 endsnippet
 
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# stroom-docs markdown snippets
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+snippet ver "stroom-docs version header" b
+> * Version Information: Created with Stroom v${1:7.0}  
+* Last Updated: `!v strftime("%d %b %Y")`  
+
+$0
+endsnippet
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Hugo Static Site Generator snippets
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,15 +146,6 @@ $0
 endsnippet
 
 snippet hicon "stroom-docs stroom icon image"
-{{< stroom-icon "${1:filename.svg}" "${2:title}" >}}
-$0
+{{< stroom-icon "${1:filename}.svg" "${2:title}" >}}$0
 endsnippet
-=======
-# stroom-docs snippets
 
-snippet ver "stroom-docs version header" b
-> * Version Information: Created with Stroom v${1:7.0}  
-* Last Updated: `!v strftime("%d %b %Y")`  
-
-$0
-endsnippet

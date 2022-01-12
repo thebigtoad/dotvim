@@ -516,6 +516,9 @@ let g:loaded_syntastic_java_javac_checker = 1
 " run shellcheck with the -x arg to make it follow sourced files
 " needs a more recent version of shellcheck
 " let g:syntastic_sh_shellcheck_args = "-x"
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["java"] }
 
 
 "vim-markdown stuff

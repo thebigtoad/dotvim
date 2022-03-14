@@ -79,6 +79,7 @@ setup_pathogen
 addPlugin "ack.vim"                         "https://github.com/mileszs/ack.vim.git" # requires silversearcher-ag
 addPlugin "comfortable-motion.vim"          "https://github.com/yuttie/comfortable-motion.vim.git"
 addPlugin "conoline.vim"                    "https://github.com/miyakogi/conoline.vim.git"
+addPlugin "editorconfig-vim"                "https://github.com/editorconfig/editorconfig-vim.git"
 addPlugin "fonts"                           "https://github.com/powerline/fonts.git"
 addPlugin "fzf"                             "https://github.com/junegunn/fzf.git" #FuzzyFinder binaries
 addPlugin "fzf.vim"                         "https://github.com/junegunn/fzf.vim.git" #FuzzyFinder vim plugin

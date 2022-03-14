@@ -272,10 +272,17 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 " Swap j <=> gj and k <=> gk
-" Also  prevent the swap if a count has been prefixed, e.g. 10k
-" to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines
-nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
-nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+" Ideavim doesn't like the 'v:' scope so only use the <expr> mapping if we
+" are not in ideavim
+if has('ide')
+    nnoremap j gj
+    nnoremap k gk
+else
+    " Also prevent the swap if a count has been prefixed, e.g. 10k
+    " to move 10 lines down, thus 10 moves 10 actual lines, not 10 visual lines
+    nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+    nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+endif
 nnoremap gj j
 nnoremap gk k
 

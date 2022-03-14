@@ -655,7 +655,7 @@ endif
 nmap <leader>gs :Git<CR>
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
-nmap <leader>gp :Gpush<CR>
+nmap <leader>gp :Git push<CR>
 set diffopt+=vertical
 
 

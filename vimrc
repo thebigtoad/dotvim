@@ -652,8 +652,8 @@ endif
 
 "fugitive (git) stuff
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gs :Git<CR>
+nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gp :Gpush<CR>
 set diffopt+=vertical

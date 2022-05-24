@@ -175,8 +175,20 @@ snippet hglos "stroom-docs glossary link"
 {{< glossary "${1:term}" >}}$0
 endsnippet
 
-snippet helm "stroom-docs element link"
+snippet helm "stroom-docs pipeline element link"
 {{< element "${1:element name}" >}}$0
+endsnippet
+
+snippet hbtn "stroom-docs stroom button image"
+{{< stroom-btn "${1:title}" >}}$0
+endsnippet
+
+snippet hpipe "stroom-docs pipeline element image"
+{{< pipe-elm "${1:element_name}" ${2:"${3:display_name}"} >}}$0
+endsnippet
+
+snippet htab "stroom-docs stroom tab image"
+{{< stroom-tab "${1:filename}.svg" "${2:title}" ${4:"active"} ${5:"unsaved"} >}}$0
 endsnippet
 
 snippet helink "stroom-docs external link"

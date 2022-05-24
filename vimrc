@@ -37,7 +37,7 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=Red
 " returns 0, then do
 "     sudo apt-get install vim-gtk
 " to enable clipboard support
-if has('clipboard')
+if has('clipboard') || has('ide')
     set clipboard=unnamedplus
 endif
 

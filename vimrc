@@ -686,6 +686,8 @@ set diffopt+=vertical
 "enable smart streak mode
 let g:sneak#streak = 1 
 let g:sneak#label = 1
+" Case sensitivity is determined by 'ignorecase' and 'smartcase'
+let g:sneak#use_ic_scs = 1
 
 
 "vim-easymotion
